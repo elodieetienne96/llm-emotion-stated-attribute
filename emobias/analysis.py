@@ -432,6 +432,14 @@ def site_code() -> dict:
     return files
 
 
+def write_site(name: str, obj) -> None:
+    """One JSON file, plus the same data as a script (window.__DATA[name]) so that the page works
+    when it is served from an origin that does not allow fetch (sandboxed hosting)."""
+    txt = json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
+    (SITE / f"{name}.json").write_text(txt, encoding="utf-8")
+    (SITE / f"{name}.js").write_text(f'window.__DATA=window.__DATA||{{}};window.__DATA[{json.dumps(name)}]={txt};\n', encoding="utf-8")
+
+
 def run(log=print) -> None:
     MEASURES.mkdir(parents=True, exist_ok=True)
     SITE.mkdir(parents=True, exist_ok=True)
@@ -456,14 +464,14 @@ def run(log=print) -> None:
     measures = {"meta": meta, "reference": ref, "effects": effects, **tables, "figure1": fig, "check": check, "generation": gen}
     for name, obj in (("reference", ref), ("effects", effects), ("tables", tables), ("figure1", fig), ("check", check), ("generation", gen)):
         (MEASURES / f"{name}.json").write_text(json.dumps(obj, ensure_ascii=False, indent=1), encoding="utf-8")
-    (SITE / "measures.json").write_text(json.dumps(measures, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    (SITE / "clips.json").write_text(json.dumps(site_clips(clips_all), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    (SITE / "predictions.json").write_text(json.dumps(site_predictions(clips_all), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    write_site("measures", measures)
+    write_site("clips", site_clips(clips_all))
+    write_site("predictions", site_predictions(clips_all))
     for corpus in ("eve", "iemocap", "enterface"):
-        (SITE / f"check_{corpus}.json").write_text(json.dumps(site_check(corpus), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    (SITE / "generation_takes.json").write_text(json.dumps(site_generation_takes(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    (SITE / "prompts.json").write_text(json.dumps(site_prompts(clips), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    (SITE / "code.json").write_text(json.dumps(site_code(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        write_site(f"check_{corpus}", site_check(corpus))
+    write_site("generation_takes", site_generation_takes())
+    write_site("prompts", site_prompts(clips))
+    write_site("code", site_code())
     write_markdown(measures)
     log(f"written {MEASURES} and {SITE}")
 

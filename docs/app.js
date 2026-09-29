@@ -18,8 +18,16 @@ const condLabel = (c) => c === "speaker" ? "The speaker (control)" : c === "spea
 
 async function load(name) {
   if (D[name]) return D[name];
-  const r = await fetch(`data/${name}.json`);
-  D[name] = await r.json();
+  // the data is loaded as a script (data/<name>.js sets window.__DATA[name]), which works on any
+  // static host, including sandboxed ones where fetch() is refused; the JSON file is kept for reuse
+  D[name] = await new Promise((resolve, reject) => {
+    if (window.__DATA && window.__DATA[name]) return resolve(window.__DATA[name]);
+    const s = document.createElement("script");
+    s.src = `data/${name}.js`;
+    s.onload = () => (window.__DATA && window.__DATA[name]) ? resolve(window.__DATA[name]) : reject(new Error(`data/${name}.js did not define the data`));
+    s.onerror = () => fetch(`data/${name}.json`).then((r) => r.json()).then(resolve).catch(reject);
+    document.head.appendChild(s);
+  });
   return D[name];
 }
 
