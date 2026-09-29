@@ -1,6 +1,6 @@
 /* Interactive site: reads docs/data/*.json written by `python -m emobias analyse`. No dependency. */
 "use strict";
-const REPO = "";   // e.g. "https://github.com/<user>/<repo>/blob/main/" to link the data files; empty = no links
+const REPO = "https://github.com/elodieetienne96/llm-emotion-stated-attribute/blob/main/";   // e.g. "https://github.com/<user>/<repo>/blob/main/" to link the data files; empty = no links
 const TABS = [["overview", "Overview"], ["clips", "Clips"], ["recognition", "Recognised emotions"], ["attributes", "Stated attribute"],
               ["combinations", "Combinations"], ["generation", "Generation"], ["check", "Corpus check"], ["prompts", "Prompts"], ["code", "Code"]];
 const COLORS = {neutral: "#9a9a9a", fear: "#7b4fa0", anger: "#c0392b", happiness: "#e0a020", sadness: "#3b6fb6", disgust: "#5f8a2f",

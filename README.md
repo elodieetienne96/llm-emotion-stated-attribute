@@ -11,7 +11,7 @@ stated attribute changes. The method covers two tasks: **recognition** (the LLM 
 emotion) and **generation** (the LLM writes the transcript from the instructions given to the
 actors).
 
-An interactive site (`docs/`, served with GitHub Pages) shows the transcripts, the emotions
+An interactive site, https://elodieetienne96.github.io/llm-emotion-stated-attribute/ (`docs/`, served with GitHub Pages), shows the transcripts, the emotions
 perceived by the annotators and by each model, the effect of every attribute, the generated
 transcripts, the measures, the prompts and the code.
 
@@ -118,6 +118,8 @@ Generation uses temperature 1; a synthetic actor is a seed (1 to 10). Every answ
 `results/measures/summary.md` gives the tables of the paper in text form.
 
 ## Site
+
+Online: https://elodieetienne96.github.io/llm-emotion-stated-attribute/
 
 Open `docs/index.html` (it reads `docs/data/*.json`; serve the folder with any static server,
 for example `python -m http.server -d docs`, or enable GitHub Pages on `docs/`).
