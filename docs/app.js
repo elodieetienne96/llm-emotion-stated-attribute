@@ -125,12 +125,16 @@ function withSpeaker(transcript, cond) {
   const phrase = cond === "speaker" || cond === "speaker_repeat" ? "The speaker" : D.P.conditions[cond] || "The speaker";
   return transcript.replace(/^Actor \d+/, phrase);
 }
+function orderConds(cs) {
+  const rank = (c) => c === "speaker" ? 0 : c === "speaker_repeat" ? 1 : c.includes("+") ? 3 : 2;
+  return [...cs].sort((a, b) => rank(a) - rank(b) || cs.indexOf(a) - cs.indexOf(b));
+}
 function clipRow(i) { const r = D.C.rows[i]; const o = {}; D.C.columns.forEach((c, j) => { o[c] = r[j]; }); o.i = i; return o; }
 function pred(model, cond, i) { const s = D.PR.models[model] && D.PR.models[model][cond]; if (!s) return null; const ch = s[i]; return ch === "-" ? null : D.EMO[+ch]; }
 
 function renderClips() {
   const actors = [...new Set(D.C.rows.map((r) => r[1]))].sort();
-  const conds = Object.keys(D.PR.models[S.model] || {});
+  const conds = orderConds(Object.keys(D.PR.models[S.model] || {}));
   $("clips-body").innerHTML = `
   <p class="note">The 2 100 clips of the corpus used in the paper: ten actors, the ten neutral sentences and 2 000 emotional clips rated by fifteen annotators. Click a clip to see its transcript, the votes of the annotators and the answer of every model in the control condition and in the condition chosen below.</p>
   <div class="card row">
@@ -143,7 +147,7 @@ function renderClips() {
     <span class="small" id="f-n"></span>
   </div>
   <div class="grid2"><div class="tbl" style="max-height:60vh"><table id="clips-table"></table></div><div id="clip-detail" class="card">Select a clip.</div></div>`;
-  ["f-actor", "f-int", "f-maj", "f-model", "f-cond", "f-q"].forEach((id) => { $(id).oninput = () => { if (id === "f-model") { S.model = $("f-model").value; const cs = Object.keys(D.PR.models[S.model] || {}); $("f-cond").innerHTML = cs.map((c) => `<option value="${c}" ${c === S.cond ? "selected" : ""}>${esc(condLabel(c))}</option>`).join(""); } clipsTable(); if (S.clip !== null) clipDetail(); }; });
+  ["f-actor", "f-int", "f-maj", "f-model", "f-cond", "f-q"].forEach((id) => { $(id).oninput = () => { if (id === "f-model") { S.model = $("f-model").value; const cs = orderConds(Object.keys(D.PR.models[S.model] || {})); $("f-cond").innerHTML = cs.map((c) => `<option value="${c}" ${c === S.cond ? "selected" : ""}>${esc(condLabel(c))}</option>`).join(""); } clipsTable(); if (S.clip !== null) clipDetail(); }; });
   clipsTable();
 }
 function clipsTable() {
