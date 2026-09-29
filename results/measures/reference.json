@@ -36,6 +36,15 @@
     "contempt": 5.9,
     "empathy": 0.05
    },
+   "intensity": {
+    "shares": {
+     "low": 41.2,
+     "high": 56.3,
+     "none": 2.5
+    },
+    "accuracy_vs_recorded": 57.7,
+    "n_recorded": 2000
+   },
    "accuracy": 17.85,
    "accuracy_ci": [
     14.55,
@@ -62,6 +71,15 @@
     "confusion": 3.75,
     "contempt": 16.05,
     "empathy": 0.0
+   },
+   "intensity": {
+    "shares": {
+     "low": 52.25,
+     "high": 44.7,
+     "none": 3.05
+    },
+    "accuracy_vs_recorded": 57.7,
+    "n_recorded": 2000
    },
    "accuracy": 17.25,
    "accuracy_ci": [
@@ -90,6 +108,15 @@
     "contempt": 3.06,
     "empathy": 0.2
    },
+   "intensity": {
+    "shares": {
+     "low": 34.67,
+     "high": 56.5,
+     "none": 2.26
+    },
+    "accuracy_vs_recorded": 54.44,
+    "n_recorded": 1993
+   },
    "accuracy": 18.06,
    "accuracy_ci": [
     14.67,
@@ -116,6 +143,15 @@
     "confusion": 2.75,
     "contempt": 25.65,
     "empathy": 0.5
+   },
+   "intensity": {
+    "shares": {
+     "low": 44.9,
+     "high": 54.15,
+     "none": 0.95
+    },
+    "accuracy_vs_recorded": 57.75,
+    "n_recorded": 2000
    },
    "accuracy": 15.65,
    "accuracy_ci": [
@@ -144,6 +180,15 @@
     "contempt": 13.7,
     "empathy": 0.0
    },
+   "intensity": {
+    "shares": {
+     "low": 36.95,
+     "high": 59.5,
+     "none": 3.55
+    },
+    "accuracy_vs_recorded": 57.45,
+    "n_recorded": 2000
+   },
    "accuracy": 19.1,
    "accuracy_ci": [
     15.8,
@@ -171,6 +216,15 @@
     "contempt": 8.95,
     "empathy": 0.0
    },
+   "intensity": {
+    "shares": {
+     "low": 43.2,
+     "high": 48.25,
+     "none": 8.55
+    },
+    "accuracy_vs_recorded": 54.6,
+    "n_recorded": 2000
+   },
    "accuracy": 20.8,
    "accuracy_ci": [
     17.3,
@@ -197,6 +251,15 @@
     "confusion": 5.05,
     "contempt": 12.3,
     "empathy": 0.1
+   },
+   "intensity": {
+    "shares": {
+     "low": 31.3,
+     "high": 68.0,
+     "none": 0.65
+    },
+    "accuracy_vs_recorded": 60.45,
+    "n_recorded": 2000
    },
    "accuracy": 18.15,
    "accuracy_ci": [

@@ -48,11 +48,13 @@ def parse_condition(condition: str) -> list[str]:
 
 
 def noun_phrase(condition: str) -> str:
-    """The noun phrase of a condition, without article: 'speaker', 'woman', 'old woman',
+    """The noun phrase of a condition, without article: 'speaker', 'woman', 'older adult', 'old man',
     'person of Western European descent', 'neurotic transgender person'."""
     parts = parse_condition(condition)
     if not parts:
         return "speaker"
+    if len(parts) == 1 and "alone" in ATTRIBUTES[parts[0]]:
+        return ATTRIBUTES[parts[0]]["alone"]
     noun, before, after = "person", [], []
     for p in parts:
         spec = ATTRIBUTES[p]

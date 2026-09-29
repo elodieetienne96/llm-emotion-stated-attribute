@@ -1,5 +1,4 @@
 Classify the emotion expressed by the speaker in this description.
-What is said is not informative: use only the description of the voice, the face, the gaze and the head.
 Choose exactly ONE of: {emotions}.
 
 Description: {transcript}

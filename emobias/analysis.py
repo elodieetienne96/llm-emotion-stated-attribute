@@ -85,7 +85,13 @@ def reference_point(clips: pd.DataFrame, log) -> dict:
         # macro-F1 over the ten emotions the annotators could choose (they had no neutral option)
         f1 = 100 * macro_f1(df.pred, df.ref, EMOTIONS[1:])
         flo, fhi = bootstrap_actors(df, lambda s: 100 * macro_f1(s.pred, s.ref, EMOTIONS[1:]), aa, n_boot=500)
-        out["models"][m] = {"n": int(len(c)), "shares": {e: r2(v) for e, v in shares(c, EMOTIONS).items()},
+        # intensity answered (low / high / none) and its agreement with the recorded intensity of the clip
+        ii = d[d.condition == CONTROL].set_index("clip")["intensity"].reindex(c.index).fillna("?").astype(str).str.lower()
+        rec = clips.set_index("clip")["intensity"].reindex(c.index).map({1: "low", 2: "high", 1.0: "low", 2.0: "high"})
+        ok = rec.notna()
+        intensity = {"shares": {k: r2(100 * float((ii == k).mean())) for k in ("low", "high", "none")},
+                     "accuracy_vs_recorded": r2(100 * float((ii[ok] == rec[ok]).mean())), "n_recorded": int(ok.sum())}
+        out["models"][m] = {"n": int(len(c)), "shares": {e: r2(v) for e, v in shares(c, EMOTIONS).items()}, "intensity": intensity,
                             "accuracy": r2(acc), "accuracy_ci": [r2(lo), r2(hi)], "macro_f1": r2(f1), "macro_f1_ci": [r2(flo), r2(fhi)],
                             "unparsed": r2(100 * float(d[d.condition == CONTROL]["emotion"].isna().mean()))}
         pivot[m] = c
@@ -111,6 +117,7 @@ def attribute_effects(clips: pd.DataFrame, log) -> dict:
         if d.empty or CONTROL not in set(d.condition):
             continue
         piv = d.pivot_table(index="clip", columns="condition", values="emotion", aggfunc="first").reindex(ref.index)
+        pin = d.assign(intensity=d["intensity"].fillna("?").astype(str).str.lower()).pivot_table(index="clip", columns="condition", values="intensity", aggfunc="first").reindex(ref.index)
         ctrl = piv[CONTROL]
         actors = ref["actor"]
         res = {}
@@ -121,6 +128,10 @@ def attribute_effects(clips: pd.DataFrame, log) -> dict:
             if len(sub) < 500:
                 continue
             res[c] = compare_conditions(sub.a, sub.b, EMOTIONS, sub.actor)
+            ia, ib = pin[CONTROL].reindex(sub.index), pin[c].reindex(sub.index)
+            res[c]["intensity"] = {"high_control": r2(100 * float((ia == "high").mean())), "high_condition": r2(100 * float((ib == "high").mean())),
+                                   "low_control": r2(100 * float((ia == "low").mean())), "low_condition": r2(100 * float((ib == "low").mean())),
+                                   "flip": r2(100 * float((ia != ib).mean()))}
         # Benjamini-Hochberg over the 20 attributes x 11 classes shifts of the model, and over the combinations
         for family, keys in (("attributes", [c for c in res if c in SINGLE]), ("combinations", [c for c in res if "+" in c]),
                              ("trans", [c for c in res if c in ("trans_woman", "trans_man")])):
@@ -352,13 +363,16 @@ def site_clips(clips: pd.DataFrame) -> dict:
 def site_predictions(clips: pd.DataFrame) -> dict:
     order = clips["clip"].tolist()
     idx = {e: str(i) for i, e in enumerate(EMOTIONS)}
-    out = {"clips": order, "emotions": EMOTIONS, "models": {}}
+    out = {"clips": order, "emotions": EMOTIONS, "models": {}, "intensity": {}}
+    icode = {"low": "l", "high": "h", "none": "n"}
     for m in MODELS:
         d = predictions(m)
         if d.empty:
             continue
         piv = d.pivot_table(index="clip", columns="condition", values="emotion", aggfunc="first").reindex(order)
         out["models"][m] = {c: "".join(idx.get(v, "-") if isinstance(v, str) else "-" for v in piv[c]) for c in piv.columns}
+        pin = d.assign(intensity=d["intensity"].fillna("?").astype(str).str.lower()).pivot_table(index="clip", columns="condition", values="intensity", aggfunc="first").reindex(order)
+        out["intensity"][m] = {c: "".join(icode.get(v, "-") if isinstance(v, str) else "-" for v in pin[c]) for c in pin.columns}
     return out
 
 
@@ -401,7 +415,7 @@ def site_prompts(clips: pd.DataFrame) -> dict:
     conds = {c: speaker_phrase(c) for c in [CONTROL] + list(ATTRIBUTES)}
     conds.update({f"{g}+{a}": speaker_phrase(f"{g}+{a}") for g in COMBINED_GENDERS for a in OTHERS})
     ex = {k: ex[k] for k in ("clip", "transcript", "text", "intended_emotion", "intensity")}
-    return {"templates": {n: load_template(n) for n in ("recognition", "check", "answer_block", "generation", "actors_brief")},
+    return {"templates": {n: load_template(n) for n in ("recognition", "answer_block", "generation", "actors_brief")},
             "attributes": {a: {**ATTRIBUTES[a], "phrase": speaker_phrase(a), "sentence": attribute_sentence(a).strip()} for a in ATTRIBUTES},
             "conditions": conds,
             "generation_sentences": {c: attribute_sentence(c).strip() for c in [CONTROL] + list(ATTRIBUTES)},

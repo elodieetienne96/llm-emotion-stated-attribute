@@ -230,6 +230,13 @@
      0.45
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 51.4,
+    "low_control": 41.2,
+    "low_condition": 45.95,
+    "flip": 8.25
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -488,6 +495,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 52.35,
+    "low_control": 41.2,
+    "low_condition": 44.5,
+    "flip": 7.9
    },
    "bh": {
     "neutral": false,
@@ -748,6 +762,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.4,
+    "low_control": 41.2,
+    "low_condition": 43.4,
+    "flip": 6.8
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -1006,6 +1027,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.05,
+    "low_control": 41.2,
+    "low_condition": 41.85,
+    "flip": 6.35
    },
    "bh": {
     "neutral": true,
@@ -1266,6 +1294,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.65,
+    "low_control": 41.2,
+    "low_condition": 42.05,
+    "flip": 7.35
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -1524,6 +1559,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.6,
+    "low_control": 41.2,
+    "low_condition": 43.05,
+    "flip": 6.85
    },
    "bh": {
     "neutral": true,
@@ -1784,6 +1826,13 @@
      0.25
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.45,
+    "low_control": 41.2,
+    "low_condition": 42.9,
+    "flip": 5.7
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -2042,6 +2091,13 @@
      0.2,
      1.05
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 49.7,
+    "low_control": 41.2,
+    "low_condition": 47.2,
+    "flip": 9.85
    },
    "bh": {
     "neutral": false,
@@ -2302,6 +2358,13 @@
      0.25
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 51.7,
+    "low_control": 41.2,
+    "low_condition": 44.75,
+    "flip": 8.05
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -2560,6 +2623,13 @@
      0.0,
      0.25
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.4,
+    "low_control": 41.2,
+    "low_condition": 43.25,
+    "flip": 6.85
    },
    "bh": {
     "neutral": true,
@@ -2820,6 +2890,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.25,
+    "low_control": 41.2,
+    "low_condition": 43.0,
+    "flip": 6.4
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -3078,6 +3155,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.3,
+    "low_control": 41.2,
+    "low_condition": 42.9,
+    "flip": 7.8
    },
    "bh": {
     "neutral": false,
@@ -3338,6 +3422,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.1,
+    "low_control": 41.2,
+    "low_condition": 43.4,
+    "flip": 7.3
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -3596,6 +3687,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.4,
+    "low_control": 41.2,
+    "low_condition": 43.8,
+    "flip": 6.5
    },
    "bh": {
     "neutral": false,
@@ -3856,6 +3954,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.65,
+    "low_control": 41.2,
+    "low_condition": 42.8,
+    "flip": 6.6
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -4114,6 +4219,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 52.9,
+    "low_control": 41.2,
+    "low_condition": 43.75,
+    "flip": 6.65
    },
    "bh": {
     "neutral": true,
@@ -4374,6 +4486,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.4,
+    "low_control": 41.2,
+    "low_condition": 43.3,
+    "flip": 6.9
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -4632,6 +4751,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.15,
+    "low_control": 41.2,
+    "low_condition": 43.35,
+    "flip": 6.75
    },
    "bh": {
     "neutral": true,
@@ -4892,6 +5018,13 @@
      0.2
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.65,
+    "low_control": 41.2,
+    "low_condition": 43.6,
+    "flip": 6.8
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -5150,6 +5283,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.95,
+    "low_control": 41.2,
+    "low_condition": 43.1,
+    "flip": 6.3
    },
    "bh": {
     "neutral": false,
@@ -5410,6 +5550,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.35,
+    "low_control": 41.2,
+    "low_condition": 42.55,
+    "flip": 6.75
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -5668,6 +5815,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.5,
+    "low_control": 41.2,
+    "low_condition": 42.55,
+    "flip": 6.05
    },
    "bh": {
     "neutral": false,
@@ -5928,6 +6082,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.1,
+    "low_control": 41.2,
+    "low_condition": 44.3,
+    "flip": 6.0
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -6186,6 +6347,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 56.3,
+    "low_control": 41.2,
+    "low_condition": 42.15,
+    "flip": 5.75
    },
    "bh": {
     "neutral": true,
@@ -6446,6 +6614,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.9,
+    "low_control": 41.2,
+    "low_condition": 42.1,
+    "flip": 5.2
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -6704,6 +6879,13 @@
      0.0,
      0.3
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 52.3,
+    "low_control": 41.2,
+    "low_condition": 44.25,
+    "flip": 8.25
    },
    "bh": {
     "neutral": true,
@@ -6964,6 +7146,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.9,
+    "low_control": 41.2,
+    "low_condition": 42.8,
+    "flip": 7.8
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -7222,6 +7411,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.2,
+    "low_control": 41.2,
+    "low_condition": 42.7,
+    "flip": 6.5
    },
    "bh": {
     "neutral": false,
@@ -7482,6 +7678,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.95,
+    "low_control": 41.2,
+    "low_condition": 43.15,
+    "flip": 6.15
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -7740,6 +7943,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 56.0,
+    "low_control": 41.2,
+    "low_condition": 41.15,
+    "flip": 7.75
    },
    "bh": {
     "neutral": false,
@@ -8000,6 +8210,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.3,
+    "low_control": 41.2,
+    "low_condition": 42.85,
+    "flip": 6.65
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -8258,6 +8475,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.7,
+    "low_control": 41.2,
+    "low_condition": 42.6,
+    "flip": 6.4
    },
    "bh": {
     "neutral": false,
@@ -8518,6 +8742,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.8,
+    "low_control": 41.2,
+    "low_condition": 42.4,
+    "flip": 6.5
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -8776,6 +9007,13 @@
      -0.15,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.2,
+    "low_control": 41.2,
+    "low_condition": 43.3,
+    "flip": 7.6
    },
    "bh": {
     "neutral": true,
@@ -9036,6 +9274,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.1,
+    "low_control": 41.2,
+    "low_condition": 42.25,
+    "flip": 6.65
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -9294,6 +9539,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.5,
+    "low_control": 41.2,
+    "low_condition": 42.25,
+    "flip": 7.15
    },
    "bh": {
     "neutral": true,
@@ -9554,6 +9806,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.95,
+    "low_control": 41.2,
+    "low_condition": 43.2,
+    "flip": 5.9
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -9812,6 +10071,13 @@
      -0.15,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.6,
+    "low_control": 41.2,
+    "low_condition": 43.35,
+    "flip": 6.75
    },
    "bh": {
     "neutral": false,
@@ -10072,6 +10338,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.65,
+    "low_control": 41.2,
+    "low_condition": 42.2,
+    "flip": 6.1
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -10330,6 +10603,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.9,
+    "low_control": 41.2,
+    "low_condition": 41.35,
+    "flip": 6.05
    },
    "bh": {
     "neutral": false,
@@ -10590,6 +10870,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.85,
+    "low_control": 41.2,
+    "low_condition": 42.25,
+    "flip": 6.45
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -10848,6 +11135,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.0,
+    "low_control": 41.2,
+    "low_condition": 43.05,
+    "flip": 6.45
    },
    "bh": {
     "neutral": false,
@@ -11108,6 +11402,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 52.5,
+    "low_control": 41.2,
+    "low_condition": 43.95,
+    "flip": 7.45
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -11366,6 +11667,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.8,
+    "low_control": 41.2,
+    "low_condition": 41.65,
+    "flip": 5.15
    },
    "bh": {
     "neutral": false,
@@ -11626,6 +11934,13 @@
      0.35
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 52.35,
+    "low_control": 41.2,
+    "low_condition": 44.35,
+    "flip": 8.05
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -11884,6 +12199,13 @@
      0.0,
      0.25
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.35,
+    "low_control": 41.2,
+    "low_condition": 42.75,
+    "flip": 7.35
    },
    "bh": {
     "neutral": true,
@@ -12144,6 +12466,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.7,
+    "low_control": 41.2,
+    "low_condition": 42.3,
+    "flip": 7.2
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -12402,6 +12731,13 @@
      0.0,
      0.2
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.65,
+    "low_control": 41.2,
+    "low_condition": 42.9,
+    "flip": 6.3
    },
    "bh": {
     "neutral": true,
@@ -12662,6 +12998,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.75,
+    "low_control": 41.2,
+    "low_condition": 41.3,
+    "flip": 6.5
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -12920,6 +13263,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.2,
+    "low_control": 41.2,
+    "low_condition": 43.2,
+    "flip": 7.1
    },
    "bh": {
     "neutral": true,
@@ -13180,6 +13530,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.15,
+    "low_control": 41.2,
+    "low_condition": 43.1,
+    "flip": 5.8
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -13438,6 +13795,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 56.75,
+    "low_control": 41.2,
+    "low_condition": 41.85,
+    "flip": 6.55
    },
    "bh": {
     "neutral": true,
@@ -13698,6 +14062,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.5,
+    "low_control": 41.2,
+    "low_condition": 43.0,
+    "flip": 7.0
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -13956,6 +14327,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.5,
+    "low_control": 41.2,
+    "low_condition": 41.6,
+    "flip": 6.3
    },
    "bh": {
     "neutral": true,
@@ -14216,6 +14594,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.9,
+    "low_control": 41.2,
+    "low_condition": 42.55,
+    "flip": 7.25
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -14474,6 +14859,13 @@
      -0.15,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.05,
+    "low_control": 41.2,
+    "low_condition": 42.85,
+    "flip": 7.55
    },
    "bh": {
     "neutral": true,
@@ -14734,6 +15126,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.8,
+    "low_control": 41.2,
+    "low_condition": 42.65,
+    "flip": 7.35
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -14992,6 +15391,13 @@
      0.0,
      0.25
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.2,
+    "low_control": 41.2,
+    "low_condition": 42.7,
+    "flip": 6.8
    },
    "bh": {
     "neutral": false,
@@ -15252,6 +15658,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.25,
+    "low_control": 41.2,
+    "low_condition": 42.95,
+    "flip": 6.05
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -15511,6 +15924,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.05,
+    "low_control": 41.2,
+    "low_condition": 42.55,
+    "flip": 6.15
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -15769,6 +16189,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.5,
+    "low_control": 41.2,
+    "low_condition": 41.6,
+    "flip": 5.6
    }
   },
   "sub_saharan_african": {
@@ -16000,6 +16427,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.0,
+    "low_control": 41.2,
+    "low_condition": 41.3,
+    "flip": 6.4
    },
    "bh": {
     "neutral": true,
@@ -16260,6 +16694,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.2,
+    "low_control": 41.2,
+    "low_condition": 42.25,
+    "flip": 6.75
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -16518,6 +16959,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.15,
+    "low_control": 41.2,
+    "low_condition": 42.2,
+    "flip": 6.1
    },
    "bh": {
     "neutral": true,
@@ -16778,6 +17226,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.85,
+    "low_control": 41.2,
+    "low_condition": 41.2,
+    "flip": 7.1
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -17036,6 +17491,13 @@
      0.05,
      0.5
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 52.05,
+    "low_control": 41.2,
+    "low_condition": 43.3,
+    "flip": 9.9
    },
    "bh": {
     "neutral": true,
@@ -17296,6 +17758,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.3,
+    "low_control": 41.2,
+    "low_condition": 42.8,
+    "flip": 8.1
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -17554,6 +18023,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.2,
+    "low_control": 41.2,
+    "low_condition": 43.1,
+    "flip": 7.5
    },
    "bh": {
     "neutral": true,
@@ -17814,6 +18290,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.65,
+    "low_control": 41.2,
+    "low_condition": 43.35,
+    "flip": 7.05
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -18072,6 +18555,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.15,
+    "low_control": 41.2,
+    "low_condition": 41.15,
+    "flip": 8.25
    },
    "bh": {
     "neutral": true,
@@ -18332,6 +18822,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.35,
+    "low_control": 41.2,
+    "low_condition": 43.1,
+    "flip": 7.7
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -18590,6 +19087,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.9,
+    "low_control": 41.2,
+    "low_condition": 43.15,
+    "flip": 7.05
    },
    "bh": {
     "neutral": false,
@@ -18850,6 +19354,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.35,
+    "low_control": 41.2,
+    "low_condition": 42.1,
+    "flip": 7.0
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -19108,6 +19619,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 52.75,
+    "low_control": 41.2,
+    "low_condition": 43.75,
+    "flip": 7.35
    },
    "bh": {
     "neutral": true,
@@ -19368,6 +19886,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.9,
+    "low_control": 41.2,
+    "low_condition": 42.55,
+    "flip": 6.65
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -19626,6 +20151,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 52.65,
+    "low_control": 41.2,
+    "low_condition": 43.55,
+    "flip": 7.65
    },
    "bh": {
     "neutral": true,
@@ -19886,6 +20418,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.95,
+    "low_control": 41.2,
+    "low_condition": 42.9,
+    "flip": 7.3
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -20144,6 +20683,13 @@
      0.0,
      0.25
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.7,
+    "low_control": 41.2,
+    "low_condition": 43.15,
+    "flip": 6.65
    },
    "bh": {
     "neutral": true,
@@ -20404,6 +20950,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.35,
+    "low_control": 41.2,
+    "low_condition": 42.45,
+    "flip": 5.95
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -20662,6 +21215,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.7,
+    "low_control": 41.2,
+    "low_condition": 43.3,
+    "flip": 7.2
    },
    "bh": {
     "neutral": false,
@@ -20922,6 +21482,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.15,
+    "low_control": 41.2,
+    "low_condition": 41.8,
+    "flip": 6.2
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -21180,6 +21747,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.6,
+    "low_control": 41.2,
+    "low_condition": 42.7,
+    "flip": 6.5
    },
    "bh": {
     "neutral": false,
@@ -21440,6 +22014,13 @@
      1.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 50.35,
+    "low_control": 41.2,
+    "low_condition": 46.55,
+    "flip": 8.95
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -21698,6 +22279,13 @@
      0.0,
      0.25
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 52.45,
+    "low_control": 41.2,
+    "low_condition": 44.45,
+    "flip": 7.55
    },
    "bh": {
     "neutral": false,
@@ -21958,6 +22546,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.75,
+    "low_control": 41.2,
+    "low_condition": 41.85,
+    "flip": 5.55
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -22216,6 +22811,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.25,
+    "low_control": 41.2,
+    "low_condition": 42.5,
+    "flip": 6.9
    },
    "bh": {
     "neutral": true,
@@ -22476,6 +23078,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 55.8,
+    "low_control": 41.2,
+    "low_condition": 41.45,
+    "flip": 7.25
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -22734,6 +23343,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.6,
+    "low_control": 41.2,
+    "low_condition": 43.5,
+    "flip": 6.4
    },
    "bh": {
     "neutral": false,
@@ -22994,6 +23610,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.45,
+    "low_control": 41.2,
+    "low_condition": 43.15,
+    "flip": 6.25
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -23252,6 +23875,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 56.85,
+    "low_control": 41.2,
+    "low_condition": 41.7,
+    "flip": 7.5
    },
    "bh": {
     "neutral": true,
@@ -23512,6 +24142,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.1,
+    "low_control": 41.2,
+    "low_condition": 42.35,
+    "flip": 6.25
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -23770,6 +24407,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.65,
+    "low_control": 41.2,
+    "low_condition": 43.35,
+    "flip": 6.15
    },
    "bh": {
     "neutral": false,
@@ -24030,6 +24674,13 @@
      0.3
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 52.95,
+    "low_control": 41.2,
+    "low_condition": 43.6,
+    "flip": 7.6
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -24288,6 +24939,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.85,
+    "low_control": 41.2,
+    "low_condition": 42.9,
+    "flip": 6.8
    },
    "bh": {
     "neutral": true,
@@ -24548,6 +25206,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.95,
+    "low_control": 41.2,
+    "low_condition": 42.8,
+    "flip": 6.3
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -24806,6 +25471,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.85,
+    "low_control": 41.2,
+    "low_condition": 42.35,
+    "flip": 6.25
    },
    "bh": {
     "neutral": false,
@@ -25066,6 +25738,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 54.0,
+    "low_control": 41.2,
+    "low_condition": 43.0,
+    "flip": 6.4
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -25324,6 +26003,13 @@
      -0.15,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 56.3,
+    "high_condition": 53.95,
+    "low_control": 41.2,
+    "low_condition": 43.75,
+    "flip": 5.65
    },
    "bh": {
     "neutral": false,
@@ -25588,6 +26274,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 54.65,
+    "low_control": 44.9,
+    "low_condition": 44.25,
+    "flip": 6.15
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -25846,6 +26539,13 @@
      -0.3,
      0.35
     ]
+   },
+   "intensity": {
+    "high_control": 54.13,
+    "high_condition": 55.23,
+    "low_control": 44.92,
+    "low_condition": 43.72,
+    "flip": 5.4
    },
    "bh": {
     "neutral": false,
@@ -26106,6 +26806,13 @@
      0.05
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 54.05,
+    "low_control": 44.9,
+    "low_condition": 44.8,
+    "flip": 6.5
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -26364,6 +27071,13 @@
      -0.55,
      0.3
     ]
+   },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 54.75,
+    "low_control": 44.9,
+    "low_condition": 44.2,
+    "flip": 5.45
    },
    "bh": {
     "neutral": false,
@@ -26624,6 +27338,13 @@
      0.1
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 55.15,
+    "low_control": 44.9,
+    "low_condition": 43.75,
+    "flip": 6.35
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -26882,6 +27603,13 @@
      -0.25,
      0.5
     ]
+   },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 55.0,
+    "low_control": 44.9,
+    "low_condition": 43.95,
+    "flip": 6.85
    },
    "bh": {
     "neutral": false,
@@ -27142,6 +27870,13 @@
      0.1
     ]
    },
+   "intensity": {
+    "high_control": 54.23,
+    "high_condition": 54.33,
+    "low_control": 44.82,
+    "low_condition": 44.42,
+    "flip": 6.11
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -27400,6 +28135,13 @@
      -0.5,
      0.3
     ]
+   },
+   "intensity": {
+    "high_control": 54.18,
+    "high_condition": 54.43,
+    "low_control": 44.87,
+    "low_condition": 44.42,
+    "flip": 5.85
    },
    "bh": {
     "neutral": false,
@@ -27660,6 +28402,13 @@
      0.25
     ]
    },
+   "intensity": {
+    "high_control": 54.13,
+    "high_condition": 54.18,
+    "low_control": 44.92,
+    "low_condition": 44.77,
+    "flip": 5.85
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -27918,6 +28667,13 @@
      -0.4,
      0.3
     ]
+   },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 54.65,
+    "low_control": 44.9,
+    "low_condition": 44.35,
+    "flip": 5.75
    },
    "bh": {
     "neutral": false,
@@ -28178,6 +28934,13 @@
      0.3
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 54.55,
+    "low_control": 44.9,
+    "low_condition": 44.4,
+    "flip": 6.6
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -28436,6 +29199,13 @@
      0.0,
      0.8
     ]
+   },
+   "intensity": {
+    "high_control": 54.1,
+    "high_condition": 54.55,
+    "low_control": 44.94,
+    "low_condition": 44.44,
+    "flip": 6.21
    },
    "bh": {
     "neutral": false,
@@ -28696,6 +29466,13 @@
      0.5
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 55.6,
+    "low_control": 44.9,
+    "low_condition": 43.4,
+    "flip": 6.5
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -28954,6 +29731,13 @@
      -0.5,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 53.97,
+    "high_condition": 55.03,
+    "low_control": 45.07,
+    "low_condition": 43.86,
+    "flip": 6.14
    }
   },
   "trans_woman": {
@@ -29185,6 +29969,13 @@
      0.1,
      1.0
     ]
+   },
+   "intensity": {
+    "high_control": 54.18,
+    "high_condition": 55.43,
+    "low_control": 44.87,
+    "low_condition": 43.42,
+    "flip": 6.05
    },
    "bh": {
     "neutral": false,
@@ -29445,6 +30236,13 @@
      0.25
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 55.05,
+    "low_control": 44.9,
+    "low_condition": 43.75,
+    "flip": 6.45
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -29703,6 +30501,13 @@
      -0.45,
      0.25
     ]
+   },
+   "intensity": {
+    "high_control": 54.21,
+    "high_condition": 54.51,
+    "low_control": 44.84,
+    "low_condition": 44.54,
+    "flip": 6.71
    },
    "bh": {
     "neutral": false,
@@ -29963,6 +30768,13 @@
      1.65
     ]
    },
+   "intensity": {
+    "high_control": 54.18,
+    "high_condition": 53.68,
+    "low_control": 44.87,
+    "low_condition": 45.17,
+    "flip": 5.71
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -30221,6 +31033,13 @@
      -0.25,
      0.75
     ]
+   },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 54.3,
+    "low_control": 44.9,
+    "low_condition": 44.65,
+    "flip": 6.05
    },
    "bh": {
     "neutral": false,
@@ -30481,6 +31300,13 @@
      0.4
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 55.4,
+    "low_control": 44.9,
+    "low_condition": 43.6,
+    "flip": 6.2
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -30739,6 +31565,13 @@
      -0.2,
      0.4
     ]
+   },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 54.25,
+    "low_control": 44.9,
+    "low_condition": 44.7,
+    "flip": 6.3
    },
    "bh": {
     "neutral": false,
@@ -30999,6 +31832,13 @@
      0.2
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 57.41,
+    "low_control": 44.89,
+    "low_condition": 41.59,
+    "flip": 6.81
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -31257,6 +32097,13 @@
      -0.35,
      0.45
     ]
+   },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 55.1,
+    "low_control": 44.9,
+    "low_condition": 43.95,
+    "flip": 5.85
    },
    "bh": {
     "neutral": false,
@@ -31517,6 +32364,13 @@
      0.65
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 55.0,
+    "low_control": 44.9,
+    "low_condition": 43.95,
+    "flip": 6.15
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -31775,6 +32629,13 @@
      -0.86,
      -0.2
     ]
+   },
+   "intensity": {
+    "high_control": 54.17,
+    "high_condition": 56.12,
+    "low_control": 44.88,
+    "low_condition": 43.02,
+    "flip": 6.38
    },
    "bh": {
     "neutral": false,
@@ -32035,6 +32896,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 54.4,
+    "low_control": 44.9,
+    "low_condition": 44.55,
+    "flip": 6.05
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -32293,6 +33161,13 @@
      -0.25,
      0.25
     ]
+   },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 52.85,
+    "low_control": 44.9,
+    "low_condition": 45.95,
+    "flip": 6.25
    },
    "bh": {
     "neutral": false,
@@ -32553,6 +33428,13 @@
      0.5
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 54.75,
+    "low_control": 44.9,
+    "low_condition": 44.25,
+    "flip": 5.75
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -32811,6 +33693,13 @@
      -0.1,
      0.4
     ]
+   },
+   "intensity": {
+    "high_control": 54.18,
+    "high_condition": 54.73,
+    "low_control": 44.87,
+    "low_condition": 44.27,
+    "flip": 5.9
    },
    "bh": {
     "neutral": false,
@@ -33071,6 +33960,13 @@
      0.55
     ]
    },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 54.9,
+    "low_control": 44.9,
+    "low_condition": 44.1,
+    "flip": 6.4
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -33329,6 +34225,13 @@
      -0.2,
      0.6
     ]
+   },
+   "intensity": {
+    "high_control": 54.15,
+    "high_condition": 54.8,
+    "low_control": 44.9,
+    "low_condition": 44.15,
+    "flip": 6.45
    },
    "bh": {
     "neutral": false,
@@ -33591,6 +34494,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 53.05,
+    "low_control": 36.95,
+    "low_condition": 40.8,
+    "flip": 13.95
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -33849,6 +34759,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.25,
+    "low_control": 36.95,
+    "low_condition": 36.0,
+    "flip": 9.9
    },
    "bh": {
     "neutral": true,
@@ -34109,6 +35026,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.5,
+    "low_control": 36.95,
+    "low_condition": 35.1,
+    "flip": 10.35
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -34367,6 +35291,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.8,
+    "low_control": 36.95,
+    "low_condition": 35.0,
+    "flip": 9.25
    },
    "bh": {
     "neutral": true,
@@ -34627,6 +35558,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.85,
+    "low_control": 36.95,
+    "low_condition": 35.25,
+    "flip": 11.3
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -34885,6 +35823,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.45,
+    "low_control": 36.95,
+    "low_condition": 37.15,
+    "flip": 8.55
    },
    "bh": {
     "neutral": true,
@@ -35145,6 +36090,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.7,
+    "low_control": 36.95,
+    "low_condition": 36.2,
+    "flip": 8.95
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -35403,6 +36355,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 49.55,
+    "low_control": 36.95,
+    "low_condition": 43.45,
+    "flip": 17.2
    },
    "bh": {
     "neutral": true,
@@ -35663,6 +36622,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.85,
+    "low_control": 36.95,
+    "low_condition": 36.5,
+    "flip": 10.7
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -35921,6 +36887,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.25,
+    "low_control": 36.95,
+    "low_condition": 35.65,
+    "flip": 9.95
    },
    "bh": {
     "neutral": true,
@@ -36181,6 +37154,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.45,
+    "low_control": 36.95,
+    "low_condition": 36.55,
+    "flip": 8.5
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -36439,6 +37419,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.65,
+    "low_control": 36.95,
+    "low_condition": 34.8,
+    "flip": 12.7
    },
    "bh": {
     "neutral": true,
@@ -36699,6 +37686,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.75,
+    "low_control": 36.95,
+    "low_condition": 37.75,
+    "flip": 10.25
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -36957,6 +37951,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.0,
+    "low_control": 36.95,
+    "low_condition": 38.85,
+    "flip": 9.75
    },
    "bh": {
     "neutral": true,
@@ -37217,6 +38218,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.9,
+    "low_control": 36.95,
+    "low_condition": 41.4,
+    "flip": 11.25
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -37475,6 +38483,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.55,
+    "low_control": 36.95,
+    "low_condition": 35.85,
+    "flip": 9.6
    },
    "bh": {
     "neutral": true,
@@ -37735,6 +38750,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 54.65,
+    "low_control": 36.95,
+    "low_condition": 40.4,
+    "flip": 10.6
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -37993,6 +39015,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.6,
+    "low_control": 36.95,
+    "low_condition": 34.75,
+    "flip": 14.45
    },
    "bh": {
     "neutral": true,
@@ -38253,6 +39282,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.45,
+    "low_control": 36.95,
+    "low_condition": 35.75,
+    "flip": 10.2
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -38511,6 +39547,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.9,
+    "low_control": 36.95,
+    "low_condition": 35.5,
+    "flip": 10.05
    },
    "bh": {
     "neutral": true,
@@ -38771,6 +39814,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.85,
+    "low_control": 36.95,
+    "low_condition": 35.8,
+    "flip": 8.9
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -39029,6 +40079,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.45,
+    "low_control": 36.95,
+    "low_condition": 38.2,
+    "flip": 9.95
    },
    "bh": {
     "neutral": true,
@@ -39289,6 +40346,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.65,
+    "low_control": 36.95,
+    "low_condition": 38.05,
+    "flip": 8.85
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -39547,6 +40611,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.48,
+    "high_condition": 56.18,
+    "low_control": 36.97,
+    "low_condition": 42.52,
+    "flip": 13.36
    },
    "bh": {
     "neutral": true,
@@ -39807,6 +40878,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 55.9,
+    "low_control": 36.95,
+    "low_condition": 38.55,
+    "flip": 11.45
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -40065,6 +41143,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 48.4,
+    "low_control": 36.95,
+    "low_condition": 43.2,
+    "flip": 18.7
    },
    "bh": {
     "neutral": true,
@@ -40325,6 +41410,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 54.05,
+    "low_control": 36.95,
+    "low_condition": 39.7,
+    "flip": 13.95
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -40583,6 +41675,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.7,
+    "low_control": 36.95,
+    "low_condition": 37.0,
+    "flip": 10.6
    },
    "bh": {
     "neutral": true,
@@ -40843,6 +41942,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.5,
+    "low_control": 36.95,
+    "low_condition": 37.15,
+    "flip": 10.6
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -41101,6 +42207,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.5,
+    "low_control": 36.95,
+    "low_condition": 36.4,
+    "flip": 14.5
    },
    "bh": {
     "neutral": true,
@@ -41361,6 +42474,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.05,
+    "low_control": 36.95,
+    "low_condition": 37.55,
+    "flip": 10.05
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -41619,6 +42739,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.65,
+    "low_control": 36.95,
+    "low_condition": 37.8,
+    "flip": 10.05
    },
    "bh": {
     "neutral": true,
@@ -41879,6 +43006,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 53.65,
+    "low_control": 36.95,
+    "low_condition": 43.65,
+    "flip": 13.75
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -42137,6 +43271,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.4,
+    "low_control": 36.95,
+    "low_condition": 36.5,
+    "flip": 12.0
    },
    "bh": {
     "neutral": true,
@@ -42397,6 +43538,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 55.35,
+    "low_control": 36.95,
+    "low_condition": 38.95,
+    "flip": 12.35
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -42655,6 +43803,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 54.05,
+    "low_control": 36.95,
+    "low_condition": 36.95,
+    "flip": 15.1
    },
    "bh": {
     "neutral": true,
@@ -42915,6 +44070,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.55,
+    "low_control": 36.95,
+    "low_condition": 36.3,
+    "flip": 10.25
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -43173,6 +44335,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.4,
+    "low_control": 36.95,
+    "low_condition": 36.25,
+    "flip": 11.4
    },
    "bh": {
     "neutral": true,
@@ -43433,6 +44602,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.75,
+    "low_control": 36.95,
+    "low_condition": 37.4,
+    "flip": 10.1
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -43691,6 +44867,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.0,
+    "low_control": 36.95,
+    "low_condition": 38.65,
+    "flip": 10.8
    },
    "bh": {
     "neutral": true,
@@ -43951,6 +45134,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 60.0,
+    "low_control": 36.95,
+    "low_condition": 35.1,
+    "flip": 9.95
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -44209,6 +45399,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 55.05,
+    "low_control": 36.95,
+    "low_condition": 41.3,
+    "flip": 11.1
    },
    "bh": {
     "neutral": false,
@@ -44469,6 +45666,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.95,
+    "low_control": 36.95,
+    "low_condition": 34.35,
+    "flip": 14.05
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -44727,6 +45931,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.15,
+    "low_control": 36.95,
+    "low_condition": 36.35,
+    "flip": 10.1
    },
    "bh": {
     "neutral": true,
@@ -44987,6 +46198,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 51.75,
+    "low_control": 36.95,
+    "low_condition": 41.7,
+    "flip": 14.25
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -45245,6 +46463,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.15,
+    "low_control": 36.95,
+    "low_condition": 35.45,
+    "flip": 11.6
    },
    "bh": {
     "neutral": true,
@@ -45505,6 +46730,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.85,
+    "low_control": 36.95,
+    "low_condition": 34.15,
+    "flip": 11.25
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -45763,6 +46995,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.2,
+    "low_control": 36.95,
+    "low_condition": 35.5,
+    "flip": 8.85
    },
    "bh": {
     "neutral": true,
@@ -46023,6 +47262,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.25,
+    "low_control": 36.95,
+    "low_condition": 35.0,
+    "flip": 11.65
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -46281,6 +47527,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.0,
+    "low_control": 36.95,
+    "low_condition": 36.25,
+    "flip": 9.2
    },
    "bh": {
     "neutral": true,
@@ -46541,6 +47794,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.45,
+    "low_control": 36.95,
+    "low_condition": 36.45,
+    "flip": 9.25
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -46799,6 +48059,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.8,
+    "low_control": 36.95,
+    "low_condition": 39.95,
+    "flip": 11.7
    },
    "bh": {
     "neutral": true,
@@ -47059,6 +48326,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 60.55,
+    "low_control": 36.95,
+    "low_condition": 33.1,
+    "flip": 11.15
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -47317,6 +48591,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 55.5,
+    "low_control": 36.95,
+    "low_condition": 40.1,
+    "flip": 10.55
    },
    "bh": {
     "neutral": true,
@@ -47577,6 +48858,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.45,
+    "low_control": 36.95,
+    "low_condition": 36.3,
+    "flip": 12.85
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -47835,6 +49123,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.0,
+    "low_control": 36.95,
+    "low_condition": 34.7,
+    "flip": 10.75
    },
    "bh": {
     "neutral": true,
@@ -48095,6 +49390,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.65,
+    "low_control": 36.95,
+    "low_condition": 34.65,
+    "flip": 11.2
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -48353,6 +49655,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.65,
+    "low_control": 36.95,
+    "low_condition": 35.1,
+    "flip": 8.6
    },
    "bh": {
     "neutral": true,
@@ -48613,6 +49922,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.1,
+    "low_control": 36.95,
+    "low_condition": 37.65,
+    "flip": 9.9
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -48872,6 +50188,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.5,
+    "low_control": 36.95,
+    "low_condition": 35.75,
+    "flip": 10.65
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -49130,6 +50453,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 60.05,
+    "low_control": 36.95,
+    "low_condition": 36.35,
+    "flip": 6.1
    }
   },
   "sub_saharan_african": {
@@ -49361,6 +50691,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.5,
+    "low_control": 36.95,
+    "low_condition": 34.95,
+    "flip": 10.1
    },
    "bh": {
     "neutral": true,
@@ -49621,6 +50958,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 55.3,
+    "low_control": 36.95,
+    "low_condition": 38.15,
+    "flip": 11.2
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -49879,6 +51223,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.15,
+    "low_control": 36.95,
+    "low_condition": 37.4,
+    "flip": 11.35
    },
    "bh": {
     "neutral": true,
@@ -50139,6 +51490,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.65,
+    "low_control": 36.95,
+    "low_condition": 37.0,
+    "flip": 12.75
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -50397,6 +51755,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 46.75,
+    "low_control": 36.95,
+    "low_condition": 44.45,
+    "flip": 20.1
    },
    "bh": {
     "neutral": true,
@@ -50657,6 +52022,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 54.35,
+    "low_control": 36.95,
+    "low_condition": 38.2,
+    "flip": 15.0
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -50915,6 +52287,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.35,
+    "low_control": 36.95,
+    "low_condition": 35.7,
+    "flip": 12.1
    },
    "bh": {
     "neutral": true,
@@ -51175,6 +52554,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.25,
+    "low_control": 36.95,
+    "low_condition": 36.3,
+    "flip": 10.85
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -51433,6 +52819,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.0,
+    "low_control": 36.95,
+    "low_condition": 35.35,
+    "flip": 15.5
    },
    "bh": {
     "neutral": true,
@@ -51693,6 +53086,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.5,
+    "low_control": 36.95,
+    "low_condition": 36.55,
+    "flip": 10.35
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -51951,6 +53351,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.65,
+    "low_control": 36.95,
+    "low_condition": 37.35,
+    "flip": 11.9
    },
    "bh": {
     "neutral": true,
@@ -52211,6 +53618,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.0,
+    "low_control": 36.95,
+    "low_condition": 41.1,
+    "flip": 12.6
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -52469,6 +53883,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.65,
+    "low_control": 36.95,
+    "low_condition": 36.5,
+    "flip": 11.75
    },
    "bh": {
     "neutral": true,
@@ -52729,6 +54150,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 55.0,
+    "low_control": 36.95,
+    "low_condition": 39.05,
+    "flip": 12.65
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -52987,6 +54415,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 53.2,
+    "low_control": 36.95,
+    "low_condition": 37.0,
+    "flip": 17.15
    },
    "bh": {
     "neutral": true,
@@ -53247,6 +54682,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.5,
+    "low_control": 36.95,
+    "low_condition": 35.85,
+    "flip": 10.15
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -53505,6 +54947,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.1,
+    "low_control": 36.95,
+    "low_condition": 35.1,
+    "flip": 10.75
    },
    "bh": {
     "neutral": true,
@@ -53765,6 +55214,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.95,
+    "low_control": 36.95,
+    "low_condition": 37.0,
+    "flip": 11.2
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -54023,6 +55479,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 55.7,
+    "low_control": 36.95,
+    "low_condition": 39.15,
+    "flip": 12.25
    },
    "bh": {
     "neutral": true,
@@ -54283,6 +55746,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.7,
+    "low_control": 36.95,
+    "low_condition": 36.6,
+    "flip": 8.05
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -54541,6 +56011,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.25,
+    "low_control": 36.95,
+    "low_condition": 37.75,
+    "flip": 8.9
    },
    "bh": {
     "neutral": true,
@@ -54801,6 +56278,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 49.6,
+    "low_control": 36.95,
+    "low_condition": 42.85,
+    "flip": 16.25
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -55059,6 +56543,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.1,
+    "low_control": 36.95,
+    "low_condition": 35.15,
+    "flip": 11.6
    },
    "bh": {
     "neutral": true,
@@ -55319,6 +56810,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.55,
+    "low_control": 36.95,
+    "low_condition": 35.7,
+    "flip": 10.1
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -55577,6 +57075,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.9,
+    "low_control": 36.95,
+    "low_condition": 35.8,
+    "flip": 9.4
    },
    "bh": {
     "neutral": true,
@@ -55837,6 +57342,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 60.0,
+    "low_control": 36.95,
+    "low_condition": 34.25,
+    "flip": 11.9
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -56095,6 +57607,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.55,
+    "low_control": 36.95,
+    "low_condition": 37.7,
+    "flip": 9.5
    },
    "bh": {
     "neutral": true,
@@ -56355,6 +57874,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.55,
+    "low_control": 36.95,
+    "low_condition": 37.55,
+    "flip": 8.75
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -56613,6 +58139,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.51,
+    "high_condition": 57.51,
+    "low_control": 36.94,
+    "low_condition": 40.99,
+    "flip": 11.76
    },
    "bh": {
     "neutral": true,
@@ -56873,6 +58406,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.35,
+    "low_control": 36.95,
+    "low_condition": 36.3,
+    "flip": 10.75
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -57131,6 +58671,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 54.25,
+    "low_control": 36.95,
+    "low_condition": 40.6,
+    "flip": 12.1
    },
    "bh": {
     "neutral": true,
@@ -57391,6 +58938,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.8,
+    "low_control": 36.95,
+    "low_condition": 33.5,
+    "flip": 13.95
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -57649,6 +59203,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 58.0,
+    "low_control": 36.95,
+    "low_condition": 36.45,
+    "flip": 10.3
    },
    "bh": {
     "neutral": true,
@@ -57909,6 +59470,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 59.05,
+    "low_control": 36.95,
+    "low_condition": 35.6,
+    "flip": 10.45
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -58167,6 +59735,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.8,
+    "low_control": 36.95,
+    "low_condition": 36.7,
+    "flip": 8.8
    },
    "bh": {
     "neutral": true,
@@ -58427,6 +60002,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 57.65,
+    "low_control": 36.95,
+    "low_condition": 37.55,
+    "flip": 9.05
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -58685,6 +60267,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 59.5,
+    "high_condition": 56.95,
+    "low_control": 36.95,
+    "low_condition": 38.45,
+    "flip": 8.85
    },
    "bh": {
     "neutral": true,
@@ -58947,6 +60536,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 43.95,
+    "low_control": 43.2,
+    "low_condition": 48.65,
+    "flip": 13.6
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -59205,6 +60801,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 50.35,
+    "low_control": 43.2,
+    "low_condition": 41.3,
+    "flip": 11.6
    },
    "bh": {
     "neutral": false,
@@ -59465,6 +61068,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.2,
+    "low_control": 43.2,
+    "low_condition": 46.15,
+    "flip": 9.25
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -59723,6 +61333,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 48.65,
+    "low_control": 43.2,
+    "low_condition": 43.3,
+    "flip": 7.75
    },
    "bh": {
     "neutral": false,
@@ -59983,6 +61600,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 50.35,
+    "low_control": 43.2,
+    "low_condition": 41.15,
+    "flip": 9.7
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -60241,6 +61865,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 47.6,
+    "low_control": 43.2,
+    "low_condition": 43.85,
+    "flip": 8.35
    },
    "bh": {
     "neutral": false,
@@ -60501,6 +62132,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.27,
+    "high_condition": 47.22,
+    "low_control": 43.16,
+    "low_condition": 43.57,
+    "flip": 8.06
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -60759,6 +62397,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 43.0,
+    "low_control": 43.2,
+    "low_condition": 48.65,
+    "flip": 13.75
    },
    "bh": {
     "neutral": false,
@@ -61019,6 +62664,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 48.15,
+    "low_control": 43.2,
+    "low_condition": 42.85,
+    "flip": 12.1
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -61277,6 +62929,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 45.6,
+    "low_control": 43.2,
+    "low_condition": 45.85,
+    "flip": 9.1
    },
    "bh": {
     "neutral": false,
@@ -61537,6 +63196,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 47.75,
+    "low_control": 43.2,
+    "low_condition": 44.0,
+    "flip": 8.15
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -61795,6 +63461,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 50.0,
+    "low_control": 43.2,
+    "low_condition": 41.25,
+    "flip": 10.05
    },
    "bh": {
     "neutral": false,
@@ -62055,6 +63728,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 47.35,
+    "low_control": 43.2,
+    "low_condition": 44.45,
+    "flip": 8.65
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -62313,6 +63993,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 47.05,
+    "low_control": 43.2,
+    "low_condition": 44.0,
+    "flip": 8.0
    },
    "bh": {
     "neutral": false,
@@ -62573,6 +64260,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 57.35,
+    "low_control": 43.2,
+    "low_condition": 37.35,
+    "flip": 17.25
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -62831,6 +64525,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.9,
+    "low_control": 43.2,
+    "low_condition": 44.5,
+    "flip": 9.2
    },
    "bh": {
     "neutral": false,
@@ -63091,6 +64792,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 47.05,
+    "low_control": 43.2,
+    "low_condition": 42.4,
+    "flip": 11.8
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -63349,6 +65057,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.0,
+    "low_control": 43.2,
+    "low_condition": 43.4,
+    "flip": 10.25
    },
    "bh": {
     "neutral": true,
@@ -63609,6 +65324,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 45.9,
+    "low_control": 43.2,
+    "low_condition": 45.9,
+    "flip": 8.85
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -63867,6 +65589,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.4,
+    "low_control": 43.2,
+    "low_condition": 45.15,
+    "flip": 8.65
    },
    "bh": {
     "neutral": false,
@@ -64127,6 +65856,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 47.5,
+    "low_control": 43.2,
+    "low_condition": 43.9,
+    "flip": 7.85
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -64385,6 +66121,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.0,
+    "low_control": 43.2,
+    "low_condition": 45.5,
+    "flip": 8.8
    },
    "bh": {
     "neutral": false,
@@ -64645,6 +66388,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 47.98,
+    "high_condition": 46.32,
+    "low_control": 43.26,
+    "low_condition": 44.55,
+    "flip": 8.25
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -64903,6 +66653,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 58.45,
+    "low_control": 43.2,
+    "low_condition": 36.95,
+    "flip": 18.15
    },
    "bh": {
     "neutral": true,
@@ -65163,6 +66920,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 45.1,
+    "low_control": 43.2,
+    "low_condition": 45.15,
+    "flip": 10.2
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -65421,6 +67185,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.45,
+    "high_condition": 40.31,
+    "low_control": 42.94,
+    "low_condition": 49.85,
+    "flip": 13.61
    },
    "bh": {
     "neutral": true,
@@ -65681,6 +67452,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.26,
+    "high_condition": 45.44,
+    "low_control": 43.12,
+    "low_condition": 44.83,
+    "flip": 10.64
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -65939,6 +67717,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.36,
+    "high_condition": 45.03,
+    "low_control": 43.07,
+    "low_condition": 46.09,
+    "flip": 8.98
    },
    "bh": {
     "neutral": false,
@@ -66199,6 +67984,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.22,
+    "high_condition": 46.67,
+    "low_control": 43.22,
+    "low_condition": 44.82,
+    "flip": 8.7
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -66457,6 +68249,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.22,
+    "high_condition": 48.37,
+    "low_control": 43.22,
+    "low_condition": 42.87,
+    "flip": 10.06
    },
    "bh": {
     "neutral": false,
@@ -66717,6 +68516,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.32,
+    "high_condition": 45.96,
+    "low_control": 43.19,
+    "low_condition": 44.85,
+    "flip": 9.09
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -66975,6 +68781,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.22,
+    "high_condition": 46.32,
+    "low_control": 43.22,
+    "low_condition": 44.77,
+    "flip": 8.75
    },
    "bh": {
     "neutral": false,
@@ -67235,6 +69048,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 54.51,
+    "low_control": 43.19,
+    "low_condition": 39.78,
+    "flip": 16.18
+   },
    "bh": {
     "neutral": true,
     "fear": true,
@@ -67493,6 +69313,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.19,
+    "high_condition": 47.19,
+    "low_control": 43.23,
+    "low_condition": 43.78,
+    "flip": 9.33
    },
    "bh": {
     "neutral": false,
@@ -67753,6 +69580,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.7,
+    "low_control": 43.2,
+    "low_condition": 42.9,
+    "flip": 11.0
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -68011,6 +69845,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 43.99,
+    "low_control": 43.19,
+    "low_condition": 45.7,
+    "flip": 10.46
    },
    "bh": {
     "neutral": true,
@@ -68271,6 +70112,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.63,
+    "high_condition": 46.71,
+    "low_control": 42.97,
+    "low_condition": 44.59,
+    "flip": 9.92
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -68529,6 +70377,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.13,
+    "high_condition": 46.52,
+    "low_control": 43.23,
+    "low_condition": 44.95,
+    "flip": 9.29
    },
    "bh": {
     "neutral": false,
@@ -68789,6 +70644,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.27,
+    "high_condition": 46.77,
+    "low_control": 43.17,
+    "low_condition": 44.37,
+    "flip": 8.9
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -69047,6 +70909,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 44.95,
+    "low_control": 43.2,
+    "low_condition": 45.75,
+    "flip": 9.45
    },
    "bh": {
     "neutral": false,
@@ -69307,6 +71176,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 48.55,
+    "low_control": 43.2,
+    "low_condition": 43.45,
+    "flip": 9.6
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -69565,6 +71441,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 49.34,
+    "high_condition": 47.42,
+    "low_control": 42.64,
+    "low_condition": 43.19,
+    "flip": 11.7
    },
    "bh": {
     "neutral": true,
@@ -69825,6 +71708,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 47.5,
+    "low_control": 43.2,
+    "low_condition": 43.25,
+    "flip": 8.5
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -70083,6 +71973,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.22,
+    "high_condition": 48.17,
+    "low_control": 43.22,
+    "low_condition": 42.22,
+    "flip": 8.3
    },
    "bh": {
     "neutral": true,
@@ -70343,6 +72240,13 @@
      0.15
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 41.15,
+    "low_control": 43.2,
+    "low_condition": 48.75,
+    "flip": 13.85
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -70601,6 +72505,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.27,
+    "high_condition": 47.72,
+    "low_control": 43.17,
+    "low_condition": 42.47,
+    "flip": 10.91
    },
    "bh": {
     "neutral": true,
@@ -70861,6 +72772,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.3,
+    "low_control": 43.2,
+    "low_condition": 44.85,
+    "flip": 8.5
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -71119,6 +73037,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.1,
+    "high_condition": 47.6,
+    "low_control": 43.3,
+    "low_condition": 43.2,
+    "flip": 9.76
    },
    "bh": {
     "neutral": false,
@@ -71379,6 +73304,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 47.26,
+    "high_condition": 49.66,
+    "low_control": 43.92,
+    "low_condition": 41.31,
+    "flip": 11.22
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -71637,6 +73569,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.75,
+    "low_control": 43.2,
+    "low_condition": 43.5,
+    "flip": 8.55
    },
    "bh": {
     "neutral": true,
@@ -71897,6 +73836,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.15,
+    "low_control": 43.2,
+    "low_condition": 44.7,
+    "flip": 8.2
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -72155,6 +74101,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 56.1,
+    "low_control": 43.2,
+    "low_condition": 38.25,
+    "flip": 16.35
    },
    "bh": {
     "neutral": true,
@@ -72415,6 +74368,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 48.1,
+    "low_control": 43.2,
+    "low_condition": 42.65,
+    "flip": 8.85
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -72673,6 +74633,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.06,
+    "high_condition": 46.3,
+    "low_control": 43.3,
+    "low_condition": 43.04,
+    "flip": 11.12
    },
    "bh": {
     "neutral": true,
@@ -72933,6 +74900,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 45.4,
+    "low_control": 43.2,
+    "low_condition": 44.35,
+    "flip": 9.7
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -73191,6 +75165,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 45.25,
+    "low_control": 43.2,
+    "low_condition": 45.1,
+    "flip": 9.7
    },
    "bh": {
     "neutral": true,
@@ -73451,6 +75432,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.32,
+    "high_condition": 46.66,
+    "low_control": 43.03,
+    "low_condition": 44.23,
+    "flip": 8.03
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -73709,6 +75697,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 48.65,
+    "low_control": 43.2,
+    "low_condition": 41.55,
+    "flip": 8.65
    },
    "bh": {
     "neutral": true,
@@ -73969,6 +75964,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.32,
+    "high_condition": 46.01,
+    "low_control": 43.15,
+    "low_condition": 45.46,
+    "flip": 8.78
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -74228,6 +76230,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 47.0,
+    "low_control": 43.2,
+    "low_condition": 45.35,
+    "flip": 8.5
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -74486,6 +76495,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.27,
+    "high_condition": 48.22,
+    "low_control": 43.16,
+    "low_condition": 43.41,
+    "flip": 4.16
    }
   },
   "sub_saharan_african": {
@@ -74717,6 +76733,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 48.0,
+    "low_control": 43.2,
+    "low_condition": 43.95,
+    "flip": 8.3
    },
    "bh": {
     "neutral": false,
@@ -74977,6 +77000,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.29,
+    "high_condition": 46.55,
+    "low_control": 43.38,
+    "low_condition": 41.94,
+    "flip": 12.02
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -75235,6 +77265,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.4,
+    "high_condition": 45.41,
+    "low_control": 43.2,
+    "low_condition": 42.11,
+    "flip": 12.73
    },
    "bh": {
     "neutral": true,
@@ -75495,6 +77532,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 44.35,
+    "low_control": 43.2,
+    "low_condition": 41.25,
+    "flip": 15.25
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -75753,6 +77797,13 @@
      0.0,
      0.15
     ]
+   },
+   "intensity": {
+    "high_control": 48.27,
+    "high_condition": 37.72,
+    "low_control": 43.22,
+    "low_condition": 48.92,
+    "flip": 19.51
    },
    "bh": {
     "neutral": true,
@@ -76013,6 +78064,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 44.6,
+    "low_control": 43.2,
+    "low_condition": 41.2,
+    "flip": 15.55
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -76271,6 +78329,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.3,
+    "low_control": 43.2,
+    "low_condition": 42.05,
+    "flip": 12.65
    },
    "bh": {
     "neutral": true,
@@ -76531,6 +78596,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.8,
+    "low_control": 43.2,
+    "low_condition": 42.15,
+    "flip": 12.35
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -76789,6 +78861,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 44.75,
+    "low_control": 43.2,
+    "low_condition": 41.4,
+    "flip": 15.35
    },
    "bh": {
     "neutral": true,
@@ -77049,6 +79128,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.6,
+    "low_control": 43.2,
+    "low_condition": 42.2,
+    "flip": 11.85
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -77307,6 +79393,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 44.95,
+    "low_control": 43.2,
+    "low_condition": 41.85,
+    "flip": 14.05
    },
    "bh": {
     "neutral": true,
@@ -77567,6 +79660,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.2,
+    "high_condition": 52.45,
+    "low_control": 43.24,
+    "low_condition": 40.19,
+    "flip": 18.77
+   },
    "bh": {
     "neutral": false,
     "fear": true,
@@ -77825,6 +79925,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.27,
+    "high_condition": 48.12,
+    "low_control": 43.21,
+    "low_condition": 40.8,
+    "flip": 12.23
    },
    "bh": {
     "neutral": true,
@@ -78085,6 +80192,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.22,
+    "high_condition": 47.52,
+    "low_control": 43.22,
+    "low_condition": 39.22,
+    "flip": 16.26
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -78343,6 +80457,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 41.4,
+    "low_control": 43.2,
+    "low_condition": 44.15,
+    "flip": 16.1
    },
    "bh": {
     "neutral": true,
@@ -78603,6 +80724,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.32,
+    "high_condition": 45.76,
+    "low_control": 43.1,
+    "low_condition": 42.4,
+    "flip": 12.84
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -78861,6 +80989,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 47.25,
+    "low_control": 43.2,
+    "low_condition": 41.6,
+    "flip": 12.15
    },
    "bh": {
     "neutral": true,
@@ -79121,6 +81256,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.7,
+    "low_control": 43.2,
+    "low_condition": 41.6,
+    "flip": 12.05
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -79379,6 +81521,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.27,
+    "high_condition": 44.9,
+    "low_control": 43.24,
+    "low_condition": 42.74,
+    "flip": 15.47
    },
    "bh": {
     "neutral": true,
@@ -79639,6 +81788,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 48.95,
+    "low_control": 43.2,
+    "low_condition": 42.8,
+    "flip": 8.15
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -79897,6 +82053,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.27,
+    "high_condition": 48.87,
+    "low_control": 43.21,
+    "low_condition": 42.66,
+    "flip": 7.16
    },
    "bh": {
     "neutral": false,
@@ -80157,6 +82320,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 41.3,
+    "low_control": 43.2,
+    "low_condition": 51.1,
+    "flip": 13.85
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -80415,6 +82585,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 49.7,
+    "low_control": 43.2,
+    "low_condition": 41.85,
+    "flip": 11.35
    },
    "bh": {
     "neutral": false,
@@ -80675,6 +82852,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.6,
+    "low_control": 43.2,
+    "low_condition": 45.6,
+    "flip": 7.85
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -80933,6 +83117,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 48.25,
+    "low_control": 43.2,
+    "low_condition": 43.6,
+    "flip": 8.8
    },
    "bh": {
     "neutral": false,
@@ -81193,6 +83384,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 51.1,
+    "low_control": 43.2,
+    "low_condition": 40.6,
+    "flip": 9.95
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -81451,6 +83649,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 47.4,
+    "low_control": 43.2,
+    "low_condition": 44.4,
+    "flip": 8.6
    },
    "bh": {
     "neutral": false,
@@ -81711,6 +83916,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.1,
+    "low_control": 43.2,
+    "low_condition": 45.1,
+    "flip": 8.4
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -81969,6 +84181,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.22,
+    "high_condition": 58.08,
+    "low_control": 43.22,
+    "low_condition": 36.57,
+    "flip": 17.51
    },
    "bh": {
     "neutral": true,
@@ -82229,6 +84448,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 47.85,
+    "low_control": 43.2,
+    "low_condition": 43.85,
+    "flip": 9.5
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -82487,6 +84713,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 45.7,
+    "low_control": 43.2,
+    "low_condition": 44.25,
+    "flip": 11.5
    },
    "bh": {
     "neutral": true,
@@ -82747,6 +84980,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.15,
+    "low_control": 43.2,
+    "low_condition": 44.2,
+    "flip": 9.45
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -83005,6 +85245,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.35,
+    "low_control": 43.2,
+    "low_condition": 45.4,
+    "flip": 9.05
    },
    "bh": {
     "neutral": false,
@@ -83265,6 +85512,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.65,
+    "low_control": 43.2,
+    "low_condition": 45.15,
+    "flip": 7.95
+   },
    "bh": {
     "neutral": false,
     "fear": false,
@@ -83523,6 +85777,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 48.65,
+    "low_control": 43.2,
+    "low_condition": 43.4,
+    "flip": 7.9
    },
    "bh": {
     "neutral": false,
@@ -83783,6 +86044,13 @@
      0.0
     ]
    },
+   "intensity": {
+    "high_control": 48.25,
+    "high_condition": 46.35,
+    "low_control": 43.2,
+    "low_condition": 45.85,
+    "flip": 7.75
+   },
    "bh": {
     "neutral": true,
     "fear": false,
@@ -84041,6 +86309,13 @@
      0.0,
      0.0
     ]
+   },
+   "intensity": {
+    "high_control": 48.17,
+    "high_condition": 46.42,
+    "low_control": 43.26,
+    "low_condition": 45.97,
+    "flip": 7.31
    },
    "bh": {
     "neutral": true,

@@ -7,12 +7,15 @@ from emobias.prompts import speaker_phrase, attribute_sentence, all_conditions, 
 def test_phrases():
     assert speaker_phrase("speaker") == "The speaker"
     assert speaker_phrase("woman") == "The woman"
-    assert speaker_phrase("old") == "The old person"
+    assert speaker_phrase("old") == "The older adult"
+    assert speaker_phrase("young") == "The young adult"
+    assert speaker_phrase("other_gender") == "The person of another gender identity"
+    assert speaker_phrase("man+old") == "The old man"
     assert speaker_phrase("woman+old") == "The old woman"
     assert speaker_phrase("transgender+neurotic") == "The neurotic transgender person"
     assert speaker_phrase("man+east_asian") == "The man of East Asian descent"
     assert attribute_sentence("control") == ""
-    assert attribute_sentence("old") == " You are an old person."
+    assert attribute_sentence("old") == " You are an older adult."
     c = all_conditions()
     assert len(c["attributes"]) == 22 and len(c["combinations"]) == 75
 

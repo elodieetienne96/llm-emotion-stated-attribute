@@ -1,6 +1,0 @@
-Classify the emotion expressed by the speaker in this description.
-Choose exactly ONE of: {emotions}.
-
-Description: {transcript}
-
-{answer_block}

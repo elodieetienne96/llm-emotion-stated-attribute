@@ -1,11 +1,11 @@
 # Corpus check (Section 4.1): the words alone, the described behaviour alone, and both, with the
-# same instruction (prompts/check.txt). Run once per input:
+# same instruction (prompts/recognition.txt). Run once per input:
 #   python -m emobias recognise configs/check_eve.yaml            (both)
 #   then with input: words_only and input: behaviour_only
 task: recognition
 corpus: eve
 group: check_eve
-template: check
+template: recognition
 input: both            # both | words_only | behaviour_only
 conditions: [speaker]
 models: [gpt-5.4, mistral-small-3, qwen-2.5-72b]

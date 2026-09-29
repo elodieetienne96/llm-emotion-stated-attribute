@@ -11,7 +11,7 @@ stated attribute changes. The method covers two tasks: **recognition** (the LLM 
 emotion) and **generation** (the LLM writes the transcript from the instructions given to the
 actors).
 
-An interactive site, https://elodieetienne96.github.io/llm-emotion-stated-attribute/ (`docs/`, served with GitHub Pages), shows the transcripts, the emotions
+An interactive site (`docs/`, served with GitHub Pages) shows the transcripts, the emotions
 perceived by the annotators and by each model, the effect of every attribute, the generated
 transcripts, the measures, the prompts and the code.
 
@@ -19,8 +19,7 @@ transcripts, the measures, the prompts and the code.
 
 ```
 prompts/        the prompts, verbatim
-  recognition.txt      recognition task (control and attribute conditions)
-  check.txt            corpus check: words alone, described behaviour alone, both
+  recognition.txt      recognition task (control, attribute conditions and corpus check)
   answer_block.txt     the JSON answer asked in recognition
   attributes.yaml      the stated attributes (Table 1) and how they are phrased
   generation.txt       generation task
@@ -66,10 +65,10 @@ it by the phrase of the condition before the transcript enters the prompt.
 | `speaker` (control) | The speaker said | (nothing) |
 | `speaker_repeat` | The speaker said, sent a second time | |
 | `woman`, `man`, `non_binary`, `transgender`, `other_gender`, `trans_woman`, `trans_man` | The woman said, … | You are a woman. |
-| `young`, `middle_aged`, `old` | The young person said, … | You are a young person. |
+| `young`, `middle_aged`, `old` | The young adult said, The middle-aged adult said, The older adult said | You are a young adult. |
 | `western_european`, … `latin_american` | The person of Western European descent said, … | You are a person of … descent. |
 | `extraverted`, `agreeable`, `conscientious`, `neurotic`, `open` | The extraverted person said, … | You are an extraverted person. |
-| `woman+old`, `transgender+neurotic`, … (75) | The old woman said, The neurotic transgender person said | You are an old woman. |
+| `woman+old`, `transgender+neurotic`, … (75) | The old woman said, The neurotic transgender person said, The woman of Western European descent said | You are an old woman. |
 
 The full list is produced by `python -c "from emobias.prompts import *; print(all_conditions())"`.
 
@@ -118,8 +117,6 @@ Generation uses temperature 1; a synthetic actor is a seed (1 to 10). Every answ
 `results/measures/summary.md` gives the tables of the paper in text form.
 
 ## Site
-
-Online: https://elodieetienne96.github.io/llm-emotion-stated-attribute/
 
 Open `docs/index.html` (it reads `docs/data/*.json`; serve the folder with any static server,
 for example `python -m http.server -d docs`, or enable GitHub Pages on `docs/`).

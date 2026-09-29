@@ -1,6 +1,6 @@
 /* Interactive site: reads docs/data/*.json written by `python -m emobias analyse`. No dependency. */
 "use strict";
-const REPO = "https://github.com/elodieetienne96/llm-emotion-stated-attribute/blob/main/";   // e.g. "https://github.com/<user>/<repo>/blob/main/" to link the data files; empty = no links
+const REPO = "";   // e.g. "https://github.com/<user>/<repo>/blob/main/" to link the data files; empty = no links
 const TABS = [["overview", "Overview"], ["clips", "Clips"], ["recognition", "Recognised emotions"], ["attributes", "Stated attribute"],
               ["combinations", "Combinations"], ["generation", "Generation"], ["check", "Corpus check"], ["prompts", "Prompts"], ["code", "Code"]];
 const COLORS = {neutral: "#9a9a9a", fear: "#7b4fa0", anger: "#c0392b", happiness: "#e0a020", sadness: "#3b6fb6", disgust: "#5f8a2f",
@@ -32,7 +32,9 @@ async function main() {
   [D.M, D.C, D.PR, D.P] = await Promise.all([load("measures"), load("clips"), load("predictions"), load("prompts")]);
   D.EMO = D.M.meta.emotions;
   D.models = Object.keys(D.M.reference.models);
-  D.attrModels = Object.keys(D.M.effects).filter((m) => Object.keys(D.M.effects[m]).length > 0);
+  // models that ran every condition first; a model with a partial design (fewer conditions) comes last
+  D.attrModels = Object.keys(D.M.effects).filter((m) => Object.keys(D.M.effects[m]).length > 0)
+    .sort((x, y) => Object.keys(D.M.effects[y]).length - Object.keys(D.M.effects[x]).length);
   S.model = D.attrModels[0];
   renderOverview(); renderClips(); renderRecognition(); renderAttributes(); renderCombinations(); renderGeneration(); renderCheck(); renderPrompts(); renderCode();
   show(location.hash.slice(1) || "overview");
@@ -125,12 +127,39 @@ function withSpeaker(transcript, cond) {
   const phrase = cond === "speaker" || cond === "speaker_repeat" ? "The speaker" : D.P.conditions[cond] || "The speaker";
   return transcript.replace(/^Actor \d+/, phrase);
 }
+// condition picker: group 1 -> attribute 1, then optional group 2 -> attribute 2
+const GROUPS = ["gender", "age", "descent", "personality"];
+function groupAttrs(g) { return Object.keys(D.M.meta.attributes).filter((a) => D.M.meta.attributes[a].group === g); }
+function condPickerHtml(prefix) {
+  return `<label>Condition ${selectHtml(prefix + "-g1", ["control", "repeat", ...GROUPS], "gender", (g) => g === "control" ? "The speaker (control)" : g === "repeat" ? "The speaker, repeat" : g)}</label>
+          <label>Attribute ${selectHtml(prefix + "-a1", groupAttrs("gender"), "woman", (a) => D.M.meta.attributes[a].phrase)}</label>
+          <label>Second attribute (optional) ${selectHtml(prefix + "-g2", ["none", ...GROUPS], "none", (g) => g === "none" ? "none" : g)}</label>
+          <label>&nbsp;${selectHtml(prefix + "-a2", [], "")}</label>`;
+}
+function condPickerBind(prefix, onchange) {
+  const g1 = $(prefix + "-g1"), a1 = $(prefix + "-a1"), g2 = $(prefix + "-g2"), a2 = $(prefix + "-a2");
+  const fill = (sel, g, keep) => { const opts = g === "none" || g === "control" || g === "repeat" ? [] : groupAttrs(g); sel.innerHTML = opts.map((a) => `<option value="${a}" ${a === keep ? "selected" : ""}>${esc(D.M.meta.attributes[a].phrase)}</option>`).join(""); sel.parentElement.style.display = opts.length ? "" : "none"; };
+  fill(a1, g1.value, a1.value); fill(a2, g2.value, "");
+  g1.onchange = () => { fill(a1, g1.value, ""); const two = !["control", "repeat"].includes(g1.value); g2.parentElement.style.display = two ? "" : "none"; if (!two) { g2.value = "none"; fill(a2, "none", ""); } onchange(); };
+  g2.onchange = () => { fill(a2, g2.value, ""); onchange(); };
+  a1.onchange = onchange; a2.onchange = onchange;
+}
+function condPickerValue(prefix) {
+  const g1 = $(prefix + "-g1").value;
+  if (g1 === "control") return "speaker";
+  if (g1 === "repeat") return "speaker_repeat";
+  const a1 = $(prefix + "-a1").value, g2 = $(prefix + "-g2").value, a2 = g2 === "none" ? "" : $(prefix + "-a2").value;
+  if (!a2) return a1;
+  const [g, o] = D.M.meta.attributes[a1].group === "gender" ? [a1, a2] : [a2, a1];
+  return `${g}+${o}`;
+}
 function orderConds(cs) {
   const rank = (c) => c === "speaker" ? 0 : c === "speaker_repeat" ? 1 : c.includes("+") ? 3 : 2;
   return [...cs].sort((a, b) => rank(a) - rank(b) || cs.indexOf(a) - cs.indexOf(b));
 }
 function clipRow(i) { const r = D.C.rows[i]; const o = {}; D.C.columns.forEach((c, j) => { o[c] = r[j]; }); o.i = i; return o; }
 function pred(model, cond, i) { const s = D.PR.models[model] && D.PR.models[model][cond]; if (!s) return null; const ch = s[i]; return ch === "-" ? null : D.EMO[+ch]; }
+function predInt(model, cond, i) { const s = D.PR.intensity && D.PR.intensity[model] && D.PR.intensity[model][cond]; if (!s) return ""; return {l: " low", h: " high", n: " none"}[s[i]] || ""; }
 
 function renderClips() {
   const actors = [...new Set(D.C.rows.map((r) => r[1]))].sort();
@@ -142,17 +171,20 @@ function renderClips() {
     <label>Intended emotion ${selectHtml("f-int", ["all", ...D.EMO], "all")}</label>
     <label>Majority label ${selectHtml("f-maj", ["all", ...D.EMO.slice(1)], "all")}</label>
     <label>Model for the condition column ${selectHtml("f-model", D.models, S.model, name)}</label>
-    <label>Condition ${selectHtml("f-cond", conds, conds.includes(S.cond) ? S.cond : conds[0], condLabel)}</label>
+    ${condPickerHtml("f")}
     <label>Search in transcript <input type="search" id="f-q" placeholder="e.g. smile"></label>
     <span class="small" id="f-n"></span>
   </div>
-  <div class="grid2"><div class="tbl" style="max-height:60vh"><table id="clips-table"></table></div><div id="clip-detail" class="card">Select a clip.</div></div>`;
-  ["f-actor", "f-int", "f-maj", "f-model", "f-cond", "f-q"].forEach((id) => { $(id).oninput = () => { if (id === "f-model") { S.model = $("f-model").value; const cs = orderConds(Object.keys(D.PR.models[S.model] || {})); $("f-cond").innerHTML = cs.map((c) => `<option value="${c}" ${c === S.cond ? "selected" : ""}>${esc(condLabel(c))}</option>`).join(""); } clipsTable(); if (S.clip !== null) clipDetail(); }; });
+  <div class="clips-grid"><div class="tbl" style="max-height:75vh"><table id="clips-table"></table></div><div id="clip-detail" class="card">Select a clip.</div></div>`;
+  const refresh = () => { S.model = $("f-model").value; clipsTable(); if (S.clip !== null) clipDetail(); };
+  ["f-actor", "f-int", "f-maj", "f-model", "f-q"].forEach((id) => { $(id).oninput = refresh; });
+  condPickerBind("f", refresh);
   clipsTable();
 }
 function clipsTable() {
-  const a = $("f-actor").value, it = $("f-int").value, mj = $("f-maj").value, q = $("f-q").value.toLowerCase(), m = $("f-model").value, c = $("f-cond").value;
+  const a = $("f-actor").value, it = $("f-int").value, mj = $("f-maj").value, q = $("f-q").value.toLowerCase(), m = $("f-model").value, c = condPickerValue("f");
   S.cond = c;
+  const has = !!(D.PR.models[m] && D.PR.models[m][c]);
   const rows = [];
   D.C.rows.forEach((r, i) => {
     const o = clipRow(i);
@@ -160,8 +192,8 @@ function clipsTable() {
     if (q && !o.transcript.toLowerCase().includes(q)) return;
     rows.push(o);
   });
-  $("f-n").textContent = `${rows.length} clips`;
-  let h = `<tr><th class="l">Clip</th><th>Actor</th><th class="l">Intended</th><th class="l">Majority</th><th class="l">${esc(name(m))}, control</th><th class="l">${esc(name(m))}, ${esc(condLabel(c))}</th></tr>`;
+  $("f-n").textContent = `${rows.length} clips` + (has ? "" : ` (${name(m)} did not run the condition ${condLabel(c)})`);
+  let h = `<tr><th class="l">Clip</th><th>Actor</th><th class="l">Intended</th><th class="l">Majority</th><th class="l">${esc(name(m))}: control</th><th class="l">${esc(name(m))}: ${esc(c === "speaker" ? "control" : condLabel(c))}</th></tr>`;
   rows.slice(0, 600).forEach((o) => {
     const pc = pred(m, "speaker", o.i), pk = pred(m, c, o.i);
     h += `<tr class="click ${o.i === S.clip ? "sel" : ""}" data-i="${o.i}"><td class="l">${o.clip}</td><td>${o.actor} (${o.actor_sex})</td><td class="l">${emoDot(o.intended_emotion)}${o.intended_emotion}${o.intensity ? " " + (o.intensity == 1 ? "low" : "high") : ""}</td><td class="l">${o.majority_label ? emoDot(o.majority_label) + o.majority_label : "<span class=small>not rated</span>"}</td><td class="l">${pc ? emoDot(pc) + pc : "–"}</td><td class="l ${pk && pc && pk !== pc ? "sig" : ""}">${pk ? emoDot(pk) + pk : "–"}</td></tr>`;
@@ -171,19 +203,19 @@ function clipsTable() {
   $("clips-table").querySelectorAll("tr.click").forEach((tr) => { tr.onclick = () => { S.clip = +tr.dataset.i; clipsTable(); clipDetail(); }; });
 }
 function clipDetail() {
-  const o = clipRow(S.clip); const cues = decodeCues(o.cues); const c = $("f-cond").value;
+  const o = clipRow(S.clip); const cues = decodeCues(o.cues); const c = condPickerValue("f");
   let h = `<h3 style="margin-top:0">${o.clip}</h3><div class="small">Actor ${o.actor} (${o.actor_sex === "F" ? "woman" : "man"}), sentence ${o.sentence}, intended ${o.intended_emotion}${o.intensity ? ", " + (o.intensity == 1 ? "low" : "high") + " intensity" : ""}</div>`;
   h += `<p><b>Enriched multimodal transcript</b> (as given to the models in the control condition)</p><div class="transcript">${md(withSpeaker(o.transcript, "speaker"))}</div>`;
-  h += `<p><b>Condition ${esc(condLabel(c))}</b>: the transcript begins with <i>${esc(withSpeaker("Actor 00", c))}</i>; nothing else changes.</p>`;
+  h += c === "speaker" ? "" : `<p><b>Condition ${esc(condLabel(c))}</b>: the transcript begins with <i>${esc(withSpeaker("Actor 00", c))} said</i>; nothing else changes.</p>`;
   if (o.majority_label) {
     const tot = o.votes.reduce((a, b) => a + b, 0);
     h += `<p><b>Emotion perceived by the ${tot} annotators</b> (majority: ${emoDot(o.majority_label)}${o.majority_label})</p>`;
     h += barRows(D.C.vote_emotions.map((e, k) => ({label: e, values: [{v: o.votes[k], color: COLORS[e]}], text: `${o.votes[k]}`})).filter((r) => r.values[0].v > 0), tot);
   } else h += `<p class="small">Neutral clip: not rated by the annotators.</p>`;
-  h += `<p><b>Emotion recognised by each model</b></p><table><tr><th class="l">Model</th><th class="l">Control</th><th class="l">${esc(condLabel(c))}</th><th class="l">Repeat control</th></tr>`;
+  h += `<p><b>Emotion recognised by each model</b> (with the intensity answered)</p><table><tr><th class="l">Model</th><th class="l">Control</th><th class="l">${esc(condLabel(c))}</th><th class="l">Repeat control</th></tr>`;
   D.models.forEach((m) => {
     const pc = pred(m, "speaker", o.i), pk = pred(m, c, o.i), pr = pred(m, "speaker_repeat", o.i);
-    h += `<tr><td class="l">${esc(name(m))}</td><td class="l">${pc ? emoDot(pc) + pc : "–"}</td><td class="l ${pk && pc && pk !== pc ? "sig" : ""}">${pk ? emoDot(pk) + pk : "–"}</td><td class="l">${pr ? emoDot(pr) + pr : "–"}</td></tr>`;
+    h += `<tr><td class="l">${esc(name(m))}</td><td class="l">${pc ? emoDot(pc) + pc + `<span class="small">${predInt(m, "speaker", o.i)}</span>` : "–"}</td><td class="l ${pk && pc && pk !== pc ? "sig" : ""}">${pk ? emoDot(pk) + pk + `<span class="small">${predInt(m, c, o.i)}</span>` : "–"}</td><td class="l">${pr ? emoDot(pr) + pr + `<span class="small">${predInt(m, "speaker_repeat", o.i)}</span>` : "–"}</td></tr>`;
   });
   h += `</table>`;
   const m = $("f-model").value; const conds = Object.keys(D.PR.models[m] || {}).filter((k) => k !== "speaker");
@@ -204,7 +236,7 @@ function renderOverview() {
        `<div><b>${D.M.meta.single.length}</b><span>attributes stated alone</span></div><div><b>${D.M.meta.combined_genders.length * D.M.meta.others.length}</b><span>combinations of two attributes</span></div>` +
        `<div><b>${f1(Math.min(...flips), 0)} to ${f1(Math.max(...flips), 0)} %</b><span>clips whose emotion changes when one attribute is stated</span></div>` +
        `<div><b>${Object.keys(G.models).length}</b><span>models writing transcripts</span></div></div>`;
-  h += `<h3>What the tabs show</h3><p><b>Clips</b>: every transcript, the votes of the annotators and the answer of each model per condition. <b>Recognised emotions</b>: the share of each emotion in the answers of each model against the annotators, accuracy and macro-F1 (reference point). <b>Stated attribute</b>: for each model and attribute, the clips whose emotion changes, the shift of each emotion, the total variation distance, the tests, and where the moved clips come from. <b>Combinations</b>: a gender attribute stated with an attribute of another group. <b>Generation</b>: the transcripts written by the models, with and without a stated attribute, against the real actors. <b>Corpus check</b>: the words alone, the described behaviour alone, and both, on three corpora. <b>Prompts</b> and <b>Code</b>: the exact text sent to the models and the source files.</p>`;
+  h += `<h3>What the tabs show</h3><p><b>Clips</b>: every transcript, the votes of the annotators and the answer of each model per condition. <b>Recognised emotions</b>: the share of each emotion in the answers of each model against the annotators, accuracy and macro-F1 (reference point). <b>Stated attribute</b>: for each model and attribute, the clips whose emotion changes, the shift of each emotion, the total variation distance, the tests, and where the moved clips come from. <b>Combinations</b>: a gender attribute stated with an attribute of another group. <b>Generation</b>: the transcripts written by the models, with and without a stated attribute. <b>Corpus check</b>: the words alone, the described behaviour alone, and both, on three corpora. <b>Prompts</b> and <b>Code</b>: the exact text sent to the models and the source files.</p>`;
   h += `<h3>Reading the measures</h3><p><b>Flip</b>: share of clips whose recognised emotion differs between the attribute condition and the control, in percent of clips. <b>Shift</b>: change in the share of an emotion, in percentage points. <b>TVD</b>: total variation distance, half the sum of the absolute shifts: the share of answers that would have to move for the two conditions to coincide. Confidence intervals are obtained by bootstrap over the ten actors. The p-value comes from a paired permutation test that swaps the two answers of a clip. A star marks a shift that passes the Benjamini-Hochberg correction at 5 % over the attribute × class shifts of a model and exceeds the shift observed between two runs of the same control prompt (repeat control).</p>`;
   $("overview-body").innerHTML = h;
 }
@@ -213,12 +245,12 @@ function renderOverview() {
 function renderRecognition() {
   const R = D.M.reference;
   let h = `<p class="note">Answers of the models in the control condition on the ${R.annotators.n_clips} rated clips. Share of each emotion in the answers, in percent, next to the share of each emotion in the majority labels of the annotators (who had no neutral option). Accuracy and macro-F1 against the majority label, with 95 % intervals over actors. A random answer is correct on ${f1(R.annotators.random_accuracy)} %; always answering the most frequent class (${R.annotators.most_frequent_class}) on ${f1(R.annotators.most_frequent_class_accuracy)} %.</p>`;
-  h += `<div class="tbl"><table><tr><th class="l">Answers given by</th>` + D.EMO.map((e) => `<th>${emoDot(e)}${e}</th>`).join("") + `<th>Accuracy (95 % CI)</th><th>Macro-F1</th><th>Unparsed</th></tr>`;
-  h += `<tr><td class="l">The annotators</td>` + D.EMO.map((e) => `<td>${e === "neutral" ? "–" : f1(R.annotators.shares[e])}</td>`).join("") + `<td>–</td><td>–</td><td></td></tr>`;
+  h += `<div class="tbl"><table><tr><th class="l">Answers given by</th>` + D.EMO.map((e) => `<th>${emoDot(e)}${e}</th>`).join("") + `<th>Accuracy (95 % CI)</th><th>Macro-F1</th><th>Intensity: high</th><th>Intensity agrees with the recording</th><th>Unparsed</th></tr>`;
+  h += `<tr><td class="l">The annotators</td>` + D.EMO.map((e) => `<td>${e === "neutral" ? "–" : f1(R.annotators.shares[e])}</td>`).join("") + `<td>–</td><td>–</td><td></td><td></td><td></td></tr>`;
   const mean = {}; D.EMO.forEach((e) => { mean[e] = D.models.reduce((a, m) => a + R.models[m].shares[e], 0) / D.models.length; });
-  D.models.forEach((m) => { const r = R.models[m]; h += `<tr><td class="l">${esc(name(m))}</td>` + D.EMO.map((e) => `<td>${f1(r.shares[e])}</td>`).join("") + `<td>${f1(r.accuracy)} [${f1(r.accuracy_ci[0])}, ${f1(r.accuracy_ci[1])}]</td><td>${f1(r.macro_f1)}</td><td>${f1(r.unparsed)} %</td></tr>`; });
-  h += `<tr><td class="l"><i>Mean of the models</i></td>` + D.EMO.map((e) => `<td><i>${f1(mean[e])}</i></td>`).join("") + `<td><i>${f1(D.models.reduce((a, m) => a + R.models[m].accuracy, 0) / D.models.length)}</i></td><td><i>${f1(D.models.reduce((a, m) => a + R.models[m].macro_f1, 0) / D.models.length)}</i></td><td></td></tr></table></div>`;
-  h += `<p class="small">Fleiss' kappa between the models on the ${R.models_fleiss_n_clips} clips they all answered: ${f1(R.models_fleiss_kappa, 2)}; between the fifteen annotators: ${f1(R.annotators.fleiss_kappa, 2)}. A single annotator's vote agrees with the majority label on ${f1(R.annotators.single_annotator_vs_majority)} % of the votes.</p>`;
+  D.models.forEach((m) => { const r = R.models[m]; h += `<tr><td class="l">${esc(name(m))}</td>` + D.EMO.map((e) => `<td>${f1(r.shares[e])}</td>`).join("") + `<td>${f1(r.accuracy)} [${f1(r.accuracy_ci[0])}, ${f1(r.accuracy_ci[1])}]</td><td>${f1(r.macro_f1)}</td><td>${f1(r.intensity.shares.high)} %</td><td>${f1(r.intensity.accuracy_vs_recorded)} %</td><td>${f1(r.unparsed)} %</td></tr>`; });
+  h += `<tr><td class="l"><i>Mean of the models</i></td>` + D.EMO.map((e) => `<td><i>${f1(mean[e])}</i></td>`).join("") + `<td><i>${f1(D.models.reduce((a, m) => a + R.models[m].accuracy, 0) / D.models.length)}</i></td><td><i>${f1(D.models.reduce((a, m) => a + R.models[m].macro_f1, 0) / D.models.length)}</i></td><td><i>${f1(D.models.reduce((a, m) => a + R.models[m].intensity.shares.high, 0) / D.models.length)} %</i></td><td><i>${f1(D.models.reduce((a, m) => a + R.models[m].intensity.accuracy_vs_recorded, 0) / D.models.length)} %</i></td><td></td></tr></table></div>`;
+  h += `<p class="small">Fleiss' kappa between the models on the ${R.models_fleiss_n_clips} clips they all answered: ${f1(R.models_fleiss_kappa, 2)}; between the fifteen annotators: ${f1(R.annotators.fleiss_kappa, 2)}. A single annotator's vote agrees with the majority label on ${f1(R.annotators.single_annotator_vs_majority)} % of the votes. Intensity: the models also answer <i>low</i> or <i>high</i>; the last two columns give the share of <i>high</i> and how often the answer matches the intensity the actor was asked to play (chance 50 %).</p>`;
   h += `<h3>Share of each emotion: annotators, each model, mean of the models</h3><div class="card"><div class="row"><label>Show ${selectHtml("rec-sel", ["mean", ...D.models], "mean", (m) => m === "mean" ? "Mean of the models" : name(m))}</label></div><div id="rec-bars"></div></div>`;
   $("recognition-body").innerHTML = h;
   const draw = () => {
@@ -244,18 +276,20 @@ function meanEffect(cond, models) {
 function renderAttributes() {
   const single = D.M.meta.single, all = [...single, "trans_woman", "trans_man"];
   let h = `<p class="note">For each model, the answers with one stated attribute are compared with the control on the same clips. Choose a model (or the mean of the models) and an attribute. Bold values with a star pass the Benjamini-Hochberg correction and exceed the repeat control.</p>`;
-  h += `<div class="card"><div class="row"><label>Model ${selectHtml("at-model", ["mean", ...D.attrModels], D.attrModels[0], (m) => m === "mean" ? "Mean of the models" : name(m))}</label><label>Condition ${selectHtml("at-cond", ["speaker_repeat", ...all], "woman", condLabel)}</label></div><div id="at-detail"></div></div>`;
+  h += `<div class="card"><div class="row"><label>Model ${selectHtml("at-model", ["mean", ...D.attrModels], D.attrModels[0], (m) => m === "mean" ? "Mean of the models" : name(m))}</label>${condPickerHtml("at")}</div><div id="at-detail"></div></div>`;
   h += `<h3>Overview: flip and total variation distance of every attribute</h3><div id="at-table"></div>`;
-  h += `<h3>Shift of each emotion, in points, for every attribute</h3><div class="card"><div class="row"><label>Model ${selectHtml("at-heat-model", D.attrModels, D.attrModels[0], name)}</label></div><div id="at-heat"></div></div>`;
+  h += `<h3>Shift of each emotion, in points, for every attribute</h3><div class="card"><div class="row"><label>Model ${selectHtml("at-heat-model", ["mean", ...D.attrModels], "mean", (m) => m === "mean" ? "Mean of the models" : name(m))}</label></div><div id="at-heat"></div></div>`;
   $("attributes-body").innerHTML = h;
-  $("at-model").onchange = attrDetail; $("at-cond").onchange = attrDetail; $("at-heat-model").onchange = attrHeat;
+  $("at-model").onchange = attrDetail; condPickerBind("at", attrDetail); $("at-heat-model").onchange = attrHeat;
   attrDetail(); attrTable(); attrHeat();
 }
 function attrDetail() {
-  const m = $("at-model").value, c = $("at-cond").value; const R = D.M.reference;
+  const m = $("at-model").value, c = condPickerValue("at"); const R = D.M.reference;
+  if (c === "speaker") { $("at-detail").innerHTML = "<p>Choose an attribute (or the repeat control) to compare with the control condition.</p>"; return; }
   let h = "";
   if (m === "mean") {
-    const e = meanEffect(c, D.attrModels);
+    const full = D.attrModels.filter((x) => D.M.meta.single.every((k) => effectsFor(x)[k]));
+    const e = meanEffect(c, full);
     if (!e) { $("at-detail").innerHTML = "<p>No model has this condition.</p>"; return; }
     h += `<div class="kpi"><div><b>${f1(e.flip)} %</b><span>clips whose emotion changes (mean of ${e.n} models: ${e.models.map(name).join(", ")})</span></div><div><b>${f1(e.tvd)} pts</b><span>total variation distance</span></div></div>`;
     const ctrl = {}; D.EMO.forEach((k) => { ctrl[k] = e.models.reduce((a, mm) => a + R.models[mm].shares[k], 0) / e.n; });
@@ -266,7 +300,8 @@ function attrDetail() {
     const rep = effectsFor(m).speaker_repeat;
     h += `<div class="kpi"><div><b>${f1(r.flip)} %</b><span>clips whose emotion changes [${f1(r.flip_ci[0])}, ${f1(r.flip_ci[1])}]${rep && c !== "speaker_repeat" ? `; repeat control ${f1(rep.flip)} %` : ""}</span></div>` +
          `<div><b>${f1(r.tvd)} pts</b><span>total variation distance [${f1(r.tvd_ci[0])}, ${f1(r.tvd_ci[1])}]${rep && c !== "speaker_repeat" ? `; repeat control ${f1(rep.tvd)}` : ""}</span></div>` +
-         `<div><b>p = ${r.p_tvd < 0.001 ? "< 0.001" : f1(r.p_tvd, 3)}</b><span>paired permutation test on the TVD${r.bh_tvd !== undefined ? (r.bh_tvd ? ", passes BH" : ", fails BH") : ""}</span></div><div><b>${r.n}</b><span>clips compared</span></div></div>`;
+         `<div><b>p = ${r.p_tvd < 0.001 ? "< 0.001" : f1(r.p_tvd, 3)}</b><span>paired permutation test on the TVD${r.bh_tvd !== undefined ? (r.bh_tvd ? ", passes BH" : ", fails BH") : ""}</span></div><div><b>${r.n}</b><span>clips compared</span></div>` +
+         (r.intensity ? `<div><b>${f1(r.intensity.high_control)} → ${f1(r.intensity.high_condition)} %</b><span>answers with high intensity, control → condition; intensity changes on ${f1(r.intensity.flip)} % of clips</span></div>` : "") + `</div>`;
     const ctrl = R.models[m].shares;
     h += shiftBars(ctrl, r.shift, r, rep);
     h += `<h3>Transfers: where the answers go</h3><p class="note">Rows: emotion recognised in the control condition; columns: emotion recognised with the attribute. Off-diagonal cells are the clips that change. Colour: share of the row.</p>`;
@@ -289,22 +324,38 @@ function shiftBars(ctrl, shift, r, rep) {
 }
 function attrTable() {
   const all = [...D.M.meta.single, "trans_woman", "trans_man"];
-  let h = `<div class="tbl"><table><tr><th class="l">Attribute</th><th class="l">Group</th>` + D.attrModels.map((m) => `<th colspan="2">${esc(name(m))}</th>`).join("") + `</tr><tr><th></th><th></th>` + D.attrModels.map(() => `<th>flip %</th><th>TVD</th>`).join("") + `</tr>`;
+  const full = D.attrModels.filter((x) => D.M.meta.single.every((c) => effectsFor(x)[c]));
+  let h = `<div class="tbl"><table><tr><th class="l">Attribute</th><th class="l">Group</th><th colspan="2">Mean of the models</th>` + D.attrModels.map((m) => `<th colspan="2">${esc(name(m))}</th>`).join("") + `</tr><tr><th></th><th></th><th>flip %</th><th>TVD</th>` + D.attrModels.map(() => `<th>flip %</th><th>TVD</th>`).join("") + `</tr>`;
   ["speaker_repeat", ...all].forEach((c) => {
     h += `<tr><td class="l">${esc(condLabel(c))}</td><td class="l">${c === "speaker_repeat" ? "control" : D.M.meta.attributes[c].group}</td>`;
+    const e = meanEffect(c, full);
+    h += e ? `<td><i>${f1(e.flip)}</i></td><td><i>${f1(e.tvd)}</i></td>` : `<td>–</td><td>–</td>`;
     D.attrModels.forEach((m) => { const r = effectsFor(m)[c]; h += r ? `<td>${f1(r.flip)}</td><td class="${r.bh_tvd && r.tvd_above_repeat ? "sig" : ""}">${f1(r.tvd)}${r.bh_tvd && r.tvd_above_repeat ? "*" : ""}</td>` : `<td>–</td><td>–</td>`; });
     h += `</tr>`;
   });
-  h += `</table></div><p class="small">TVD in points; * : passes the Benjamini-Hochberg correction over the attributes of the model and exceeds the repeat control.</p>`;
+  h += `</table></div><p class="small">TVD in points; * : passes the Benjamini-Hochberg correction over the attributes of the model and exceeds the repeat control. Mean over the models that ran every attribute (${full.map(name).join(", ")}).</p>`;
   $("at-table").innerHTML = h;
 }
 function attrHeat() {
-  const m = $("at-heat-model").value; const E = effectsFor(m);
-  const conds = ["speaker_repeat", ...D.M.meta.single, "trans_woman", "trans_man"].filter((c) => E[c]);
-  const cells = conds.map((c) => D.EMO.map((e) => E[c].shift[e]));
-  const marks = conds.map((c) => D.EMO.map((e) => E[c].bh && E[c].bh[e] && (!E[c].above_repeat || E[c].above_repeat[e])));
+  const m = $("at-heat-model").value;
+  const all = ["speaker_repeat", ...D.M.meta.single, "trans_woman", "trans_man"];
+  let conds, cells, marks, note;
+  if (m === "mean") {
+    // mean over the models that ran the full set of attributes (a partial design is left out)
+    const full = D.attrModels.filter((x) => D.M.meta.single.every((c) => effectsFor(x)[c]));
+    conds = all.filter((c) => full.some((x) => effectsFor(x)[c]));
+    cells = conds.map((c) => D.EMO.map((e) => { const v = full.filter((x) => effectsFor(x)[c]).map((x) => effectsFor(x)[c].shift[e]); return v.reduce((s, y) => s + y, 0) / v.length; }));
+    marks = null;
+    note = `Mean over ${full.map(name).join(", ")}.`;
+  } else {
+    const E = effectsFor(m);
+    conds = all.filter((c) => E[c]);
+    cells = conds.map((c) => D.EMO.map((e) => E[c].shift[e]));
+    marks = conds.map((c) => D.EMO.map((e) => E[c].bh && E[c].bh[e] && (!E[c].above_repeat || E[c].above_repeat[e])));
+    note = "* : significant after correction and above the repeat control.";
+  }
   const scale = Math.max(5, ...cells.flat().map(Math.abs));
-  $("at-heat").innerHTML = heatmap(conds.map(condLabel), D.EMO, cells, scale, (v) => sgn(v, 1), true, marks) + `<p class="small">Green: the emotion is answered more often with the attribute; red: less often. * : significant after correction and above the repeat control.</p>`;
+  $("at-heat").innerHTML = heatmap(conds.map(condLabel), D.EMO, cells, scale, (v) => sgn(v, 1), true, marks) + `<p class="small">Green: the emotion is answered more often with the attribute; red: less often. ${note}</p>`;
 }
 
 // ---------------------------------------------------------------- combinations (Figure 1)
@@ -347,56 +398,28 @@ function renderCombinations() {
 // ---------------------------------------------------------------- generation
 function renderGeneration() {
   const G = D.M.generation; const models = Object.keys(G.models);
-  let h = `<p class="note">The models wrote transcripts from the actors' brief: ten synthetic actors (sampling seeds), the same sentences, emotions and intensities as one real actor, in the control condition (nothing said about the actor) and with one stated attribute (<i>You are a woman.</i>). The written cues are compared with the cues of the real actors.</p>`;
-  h += `<h3>Variety between actors and effect of a stated attribute (Table 5)</h3><div class="tbl"><table><tr><th class="l">Written by</th><th>Takes</th><th>Prosody</th><th>Head</th><th>Face</th><th>Gaze</th><th>All</th><th>Identical across actors</th><th>Attribute: TVD, median (range, n)</th><th>Woman vs man: TVD</th><th>Correlation with the real difference</th></tr>`;
-  const fr = G.real.divergence_family;
-  h += `<tr><td class="l">Real actors of the corpus</td><td>${G.real.n_takes}</td><td>${f1(fr.prosody, 3)}</td><td>${f1(fr.head, 3)}</td><td>${f1(fr.face, 3)}</td><td>${f1(fr.gaze, 3)}</td><td><b>${f1(fr.all, 3)}</b></td><td>–</td><td>–</td><td>${f1(G.real.women_vs_men_tvd_mean)} (actresses vs actors)</td><td>–</td></tr>`;
-  models.forEach((m) => { const r = G.models[m], f = r.control.divergence_family, s = r.summary, w = r.woman_vs_man;
-    h += `<tr><td class="l">${esc(name(m))}</td><td>${r.control.n_takes}</td><td>${f1(f.prosody, 3)}</td><td>${f1(f.head, 3)}</td><td>${f1(f.face, 3)}</td><td>${f1(f.gaze, 3)}</td><td><b>${f1(f.all, 3)}</b></td><td>${f1(r.control.identical_across_actors)} %</td><td>${f1(s.tvd_median)} (${f1(s.tvd_min)}–${f1(s.tvd_max)}, ${s.n_conditions})</td><td>${w ? f1(w.tvd_mean) : "–"}</td><td>${w ? f1(w.correlation_with_real, 2) : "–"}</td></tr>`; });
-  h += `</table></div><p class="small">Columns 3 to 7: Jensen-Shannon divergence (0 to 1) between the cue distributions of two actors of the same corpus, averaged over the pairs of actors, the emotions and the cues of the family. Attribute TVD: mean over the 22 cues of the total variation distance, in points, between the cues written with the attribute and without, median over the attributes run for that model. Woman vs man: the same distance between the transcripts written with <i>woman</i> and with <i>man</i>; the real difference is between the actresses and the actors of the corpus (mean difference of the share of a cue value: ${f1(G.real.women_vs_men_value_diff)} points).</p>`;
-  h += `<h3>Cue by cue</h3><div class="card"><div class="row"><label>Model ${selectHtml("g-model", models, models[0], name)}</label><label>Condition ${selectHtml("g-cond", [], "")}</label></div><div id="g-cues"></div></div>`;
-  h += `<h3>How an emotion is written: share of takes with each cue value</h3><div class="card"><div class="row"><label>Emotion ${selectHtml("g-emo", D.EMO, "happiness")}</label><label>Cue ${selectHtml("g-cue", CUES, "AU12", (c) => CUE_NAMES[c])}</label></div><div id="g-proto"></div></div>`;
-  h += `<h3>Read the generated takes</h3><div class="card"><div class="row"><label>Model ${selectHtml("g-t-model", models, models[0], name)}</label><label>Condition ${selectHtml("g-t-cond", [], "")}</label><label>Emotion ${selectHtml("g-t-emo", D.EMO, "anger")}</label><label>Sentence ${selectHtml("g-t-sent", [1,2,3,4,5,6,7,8,9,10].map(String), "1")}</label><label>Intensity ${selectHtml("g-t-int", ["1", "2"], "2", (v) => v === "1" ? "low" : "high")}</label></div><div id="g-takes">Loading…</div></div>`;
+  let h = `<p class="note">The models wrote transcripts from the actors' brief: ten synthetic actors (sampling seeds), the same sentences, emotions and intensities as one real actor, in the control condition (nothing said about the actor) and with one stated attribute (<i>You are a woman.</i>). The answer of the model is the set of 22 cues; it is rendered here as an enriched multimodal transcript, with the same renderer as the real recordings. Choose a model, a condition, an emotion, a sentence and an intensity to read what each synthetic actor wrote.</p>`;
+  h += `<div class="card"><div class="row"><label>Model ${selectHtml("g-t-model", models, models[0], name)}</label><label>Condition ${selectHtml("g-t-cond", [], "")}</label><label>Emotion ${selectHtml("g-t-emo", D.EMO, "anger")}</label><label>Sentence ${selectHtml("g-t-sent", [1,2,3,4,5,6,7,8,9,10].map(String), "1")}</label><label>Intensity ${selectHtml("g-t-int", ["1", "2"], "2", (v) => v === "1" ? "low" : "high")}</label></div><div id="g-takes">Loading…</div></div>`;
   $("generation-body").innerHTML = h;
-  const fillConds = (selId, m) => { const cs = Object.keys(G.models[m].conditions); $(selId).innerHTML = cs.map((c) => `<option value="${c}">${esc(condLabel(c))}</option>`).join(""); };
-  fillConds("g-cond", models[0]); fillConds("g-t-cond", models[0]);
-  $("g-model").onchange = () => { fillConds("g-cond", $("g-model").value); genCues(); };
-  $("g-cond").onchange = genCues; $("g-emo").onchange = genProto; $("g-cue").onchange = genProto;
-  $("g-t-model").onchange = () => { fillConds("g-t-cond", $("g-t-model").value); $("g-t-cond").insertAdjacentHTML("afterbegin", '<option value="control" selected>Control</option>'); genTakes(); };
-  $("g-t-cond").insertAdjacentHTML("afterbegin", '<option value="control" selected>Control</option>');
+  const fillConds = (m) => { const cs = ["control", ...Object.keys(G.models[m].conditions)]; $("g-t-cond").innerHTML = cs.map((c) => `<option value="${c}">${esc(c === "control" ? "Control (nothing said about the actor)" : condLabel(c))}</option>`).join(""); };
+  fillConds(models[0]);
+  $("g-t-model").onchange = () => { fillConds($("g-t-model").value); genTakes(); };
   ["g-t-cond", "g-t-emo", "g-t-sent", "g-t-int"].forEach((id) => { $(id).onchange = genTakes; });
-  genCues(); genProto(); genTakes();
-}
-function genCues() {
-  const G = D.M.generation, m = $("g-model").value, c = $("g-cond").value; const r = G.models[m].conditions[c];
-  if (!r) { $("g-cues").innerHTML = ""; return; }
-  const realtv = G.real.women_vs_men_tvd;
-  let h = `<p>${esc(name(m))}, <i>${esc(condLabel(c))}</i> against the control: ${r.n_pairs} matched takes; mean TVD over the cues ${f1(r.tvd_mean)} points, largest ${f1(r.tvd_max)}. Grey: the real difference between the actresses and the actors of the corpus for the same cue.</p>`;
-  const max = Math.max(...CUES.map((k) => Math.max(r.cues[k].tvd, realtv[k])));
-  h += barRows(CUES.map((k) => ({label: CUE_NAMES[k].split(" ")[0] === k ? k : CUE_NAMES[k], values: [{v: realtv[k], cls: "ctrl", title: "real actresses vs actors"}, {v: r.cues[k].tvd, title: "attribute vs control"}], text: `${f1(r.cues[k].tvd)}${r.cues[k].p < 0.05 ? " *" : ""}`})), max || 1);
-  h += `<p class="small">* : p &lt; 0.05, paired permutation test on the takes (no correction).</p>`;
-  $("g-cues").innerHTML = h;
-}
-function genProto() {
-  const G = D.M.generation, e = $("g-emo").value, k = $("g-cue").value;
-  const sources = [["Real actors", G.real.shares_by_emotion[e][k]], ...Object.keys(G.models).map((m) => [name(m), (G.models[m].control.shares_by_emotion[e] || {})[k] || {}])];
-  const vals = D.C.cue_codes[k];
-  let h = `<table><tr><th class="l">Written by (control)</th>` + vals.map((v) => `<th>${v}</th>`).join("") + `</tr>`;
-  sources.forEach(([n, sh]) => { h += `<tr><td class="l">${esc(n)}</td>` + vals.map((v) => `<td style="background:${heatColor(sh[v] || 0, 100, false)};${heatText(sh[v] || 0, 100)}">${f1(sh[v] || 0, 0)} %</td>`).join("") + `</tr>`; });
-  $("g-proto").innerHTML = h + `</table><p class="small">Share of the takes of the emotion <b>${e}</b> in which the cue <b>${CUE_NAMES[k]}</b> takes each value.</p>`;
+  genTakes();
 }
 async function genTakes() {
   const T = await load("generation_takes");
   const m = $("g-t-model").value, c = $("g-t-cond").value, e = $("g-t-emo").value, s = +$("g-t-sent").value, it = e === "neutral" ? 0 : +$("g-t-int").value;
   const takes = (T.models[m] && T.models[m][c] || []).filter((t) => t[2] === e && t[3] === s && t[4] === it);
-  const sentence = D.C.rows.find((r) => r[5] === s) ? clipRow(D.C.rows.findIndex((r) => r[5] === s)).transcript.match(/“(.*?)”/)[1] : "";
-  let h = `<div class="grid2"><div><p><b>${esc(name(m))}</b>, ${esc(condLabel(c))}: ${takes.length} synthetic actors</p>`;
-  takes.forEach((t) => { const cues = {}; CUES.forEach((k, i) => { cues[k] = T.cues ? D.C.cue_codes[k][+t[5][i]] : null; }); h += `<div class="transcript" style="margin:4px 0">${md(renderTranscript(cues, "Actor " + t[1], sentence))}</div>`; });
+  const sentence = SENTENCES[s - 1];
+  let h = `<p><b>${esc(name(m))}</b>, ${esc(c === "control" ? "control" : condLabel(c))}: ${takes.length} synthetic actors, sentence ${s}, ${e}${e === "neutral" ? "" : ", " + (it === 1 ? "low" : "high") + " intensity"}</p>`;
+  takes.forEach((t) => { const cues = {}; CUES.forEach((k, i) => { cues[k] = D.C.cue_codes[k][+t[5][i]]; }); h += `<div class="transcript" style="margin:4px 0">${md(renderTranscript(cues, "Actor " + t[1], sentence))}</div>`; });
   if (!takes.length) h += `<p class="small">No take for this combination (this condition was generated on a subset of sentences or actors).</p>`;
-  h += `</div><div><p><b>Real actors</b> of the corpus, same sentence, emotion and intensity</p>`;
-  D.C.rows.forEach((r, i) => { const o = clipRow(i); if (o.intended_emotion === e && o.sentence === s && (e === "neutral" || +o.intensity === it)) h += `<div class="transcript" style="margin:4px 0">${md(o.transcript)}<div class="small">majority of the annotators: ${o.majority_label || "not rated"}</div></div>`; });
-  $("g-takes").innerHTML = h + `</div></div>`;
+  $("g-takes").innerHTML = h;
 }
+const SENTENCES = ["The birch canoe slid on the smooth planks.", "Glue the sheet to the dark blue background.", "It's easy to tell the depth of a well.",
+  "These days a chicken leg is a rare dish.", "Rice is often served in round bowls.", "The juice of lemons makes fine punch.", "The box was thrown beside the parked truck.",
+  "The hogs were fed chopped corn and garbage.", "Four hours of steady work faced us.", "A large size in stockings is hard to sell."];
 
 // ---------------------------------------------------------------- corpus check
 function renderCheck() {
@@ -438,7 +461,7 @@ function renderPrompts() {
   h += `<h3>The stated attributes (Table 1)</h3><div class="tbl"><table><tr><th class="l">Group</th><th class="l">Attribute id</th><th class="l">Recognition: the transcript begins with</th><th class="l">Generation: sentence before the brief</th></tr>`;
   Object.entries(P.attributes).forEach(([a, s]) => { h += `<tr><td class="l">${s.group}</td><td class="l">${a}</td><td class="l">${esc(s.phrase)} said …</td><td class="l">${esc(s.sentence)}</td></tr>`; });
   h += `</table></div><p class="small">Control: <i>The speaker said …</i>. Combinations: <i>The old woman said</i>, <i>The neurotic transgender person said</i>, <i>The man of East Asian descent said</i> (see the condition list in the prompt builder above).</p>`;
-  h += `<h3>Corpus check</h3><p>Template <code>prompts/check.txt</code>, the same for the three inputs; words alone: <i>The speaker said “…”.</i>; described behaviour alone: <i>The speaker spoke, with …</i>.</p><pre class="light">${esc(P.templates.check)}</pre>`;
+  h += `<h3>Corpus check</h3><p>Same template and same answer block; only the input changes. Words alone: <i>The speaker said “…”.</i>; described behaviour alone: <i>The speaker spoke, with …</i>.</p>`;
   h += `<h3>Generation task</h3><p>Template <code>prompts/generation.txt</code>. <code>{attribute_sentence}</code> is empty in the control condition. The brief is the sheet given to the real actors, reproduced verbatim. Example with <i>You are a woman.</i>:</p><pre class="light" style="max-height:60vh">${esc(P.example.generation_woman)}</pre>`;
   $("prompts-body").innerHTML = h;
   const build = () => {
