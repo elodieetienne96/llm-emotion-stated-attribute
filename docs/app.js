@@ -143,7 +143,7 @@ function renderClips() {
     <span class="small" id="f-n"></span>
   </div>
   <div class="grid2"><div class="tbl" style="max-height:60vh"><table id="clips-table"></table></div><div id="clip-detail" class="card">Select a clip.</div></div>`;
-  ["f-actor", "f-int", "f-maj", "f-model", "f-cond", "f-q"].forEach((id) => { $(id).oninput = () => { if (id === "f-model") { S.model = $("f-model").value; const cs = Object.keys(D.PR.models[S.model] || {}); $("f-cond").innerHTML = cs.map((c) => `<option value="${c}" ${c === S.cond ? "selected" : ""}>${esc(condLabel(c))}</option>`).join(""); } clipsTable(); }; });
+  ["f-actor", "f-int", "f-maj", "f-model", "f-cond", "f-q"].forEach((id) => { $(id).oninput = () => { if (id === "f-model") { S.model = $("f-model").value; const cs = Object.keys(D.PR.models[S.model] || {}); $("f-cond").innerHTML = cs.map((c) => `<option value="${c}" ${c === S.cond ? "selected" : ""}>${esc(condLabel(c))}</option>`).join(""); } clipsTable(); if (S.clip !== null) clipDetail(); }; });
   clipsTable();
 }
 function clipsTable() {
