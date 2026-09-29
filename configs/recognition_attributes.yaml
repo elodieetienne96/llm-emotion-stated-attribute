@@ -1,0 +1,11 @@
+# One stated attribute at a time (Table 1): the twenty attributes plus trans woman and trans man.
+# Four models; Grok 4.20 does the gender group only:
+#   python -m emobias recognise configs/recognition_attributes.yaml --models grok-4.20 \
+#       --conditions woman,man,non_binary,transgender,other_gender,trans_woman,trans_man
+task: recognition
+corpus: eve
+group: attributes
+template: recognition
+conditions: [attributes]
+models: [gpt-5.4, mistral-small-3, qwen-2.5-72b, grok-4.20]
+llm: {temperature: 0.0, max_tokens: 60, seed: 0, workers: 8}

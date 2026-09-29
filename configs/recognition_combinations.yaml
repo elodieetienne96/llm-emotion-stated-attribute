@@ -1,0 +1,10 @@
+# Two attributes stated together: each of the five gender attributes with each of the fifteen
+# attributes of age, descent and personality (75 combinations). Grok 4.20 does the 30
+# combinations with woman and man only.
+task: recognition
+corpus: eve
+group: combinations
+template: recognition
+conditions: [combinations]
+models: [gpt-5.4, mistral-small-3, qwen-2.5-72b]
+llm: {temperature: 0.0, max_tokens: 60, seed: 0, workers: 8}

@@ -1,0 +1,3 @@
+Answer with a single JSON object and nothing else, on one line:
+{"emotion": "<one of the listed emotions>", "intensity": "<low or high>"}
+intensity is how strongly the emotion is expressed relative to the speaker's neutral baseline; use "none" only if the emotion is neutral.

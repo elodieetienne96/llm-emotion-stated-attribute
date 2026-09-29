@@ -1,0 +1,216 @@
+{
+ "annotators": {
+  "shares": {
+   "neutral": 0.0,
+   "fear": 3.85,
+   "anger": 10.65,
+   "happiness": 13.25,
+   "sadness": 16.85,
+   "disgust": 9.5,
+   "surprise": 9.5,
+   "confidence": 20.35,
+   "confusion": 9.15,
+   "contempt": 5.2,
+   "empathy": 1.7
+  },
+  "n_clips": 2000,
+  "single_annotator_vs_majority": 51.31,
+  "most_frequent_class": "confidence",
+  "most_frequent_class_accuracy": 20.35,
+  "random_accuracy": 9.09,
+  "fleiss_kappa": 0.26
+ },
+ "models": {
+  "gpt-5.4": {
+   "n": 2000,
+   "shares": {
+    "neutral": 2.5,
+    "fear": 2.9,
+    "anger": 7.0,
+    "happiness": 10.9,
+    "sadness": 10.85,
+    "disgust": 41.9,
+    "surprise": 3.1,
+    "confidence": 8.35,
+    "confusion": 6.55,
+    "contempt": 5.9,
+    "empathy": 0.05
+   },
+   "accuracy": 17.85,
+   "accuracy_ci": [
+    14.55,
+    20.95
+   ],
+   "macro_f1": 12.96,
+   "macro_f1_ci": [
+    10.55,
+    14.67
+   ],
+   "unparsed": 0.0
+  },
+  "claude-sonnet-4.6": {
+   "n": 2000,
+   "shares": {
+    "neutral": 4.2,
+    "fear": 2.25,
+    "anger": 6.25,
+    "happiness": 12.1,
+    "sadness": 17.6,
+    "disgust": 29.1,
+    "surprise": 4.55,
+    "confidence": 4.15,
+    "confusion": 3.75,
+    "contempt": 16.05,
+    "empathy": 0.0
+   },
+   "accuracy": 17.25,
+   "accuracy_ci": [
+    13.85,
+    20.65
+   ],
+   "macro_f1": 13.28,
+   "macro_f1_ci": [
+    10.78,
+    15.12
+   ],
+   "unparsed": 0.0
+  },
+  "gemini-3.5-flash": {
+   "n": 1993,
+   "shares": {
+    "neutral": 2.41,
+    "fear": 1.86,
+    "anger": 13.95,
+    "happiness": 14.15,
+    "sadness": 15.15,
+    "disgust": 43.8,
+    "surprise": 2.66,
+    "confidence": 2.56,
+    "confusion": 0.2,
+    "contempt": 3.06,
+    "empathy": 0.2
+   },
+   "accuracy": 18.06,
+   "accuracy_ci": [
+    14.67,
+    21.34
+   ],
+   "macro_f1": 12.16,
+   "macro_f1_ci": [
+    10.1,
+    13.65
+   ],
+   "unparsed": 0.33
+  },
+  "grok-4.20": {
+   "n": 2000,
+   "shares": {
+    "neutral": 0.95,
+    "fear": 1.45,
+    "anger": 7.8,
+    "happiness": 11.7,
+    "sadness": 8.4,
+    "disgust": 32.0,
+    "surprise": 4.1,
+    "confidence": 4.7,
+    "confusion": 2.75,
+    "contempt": 25.65,
+    "empathy": 0.5
+   },
+   "accuracy": 15.65,
+   "accuracy_ci": [
+    12.4,
+    19.25
+   ],
+   "macro_f1": 12.24,
+   "macro_f1_ci": [
+    9.6,
+    14.2
+   ],
+   "unparsed": 0.0
+  },
+  "mistral-small-3": {
+   "n": 2000,
+   "shares": {
+    "neutral": 3.55,
+    "fear": 0.1,
+    "anger": 7.4,
+    "happiness": 12.3,
+    "sadness": 25.45,
+    "disgust": 22.95,
+    "surprise": 2.9,
+    "confidence": 3.95,
+    "confusion": 7.7,
+    "contempt": 13.7,
+    "empathy": 0.0
+   },
+   "accuracy": 19.1,
+   "accuracy_ci": [
+    15.8,
+    22.05
+   ],
+   "macro_f1": 14.13,
+   "macro_f1_ci": [
+    12.48,
+    15.41
+   ],
+   "unparsed": 0.0
+  },
+  "qwen-2.5-72b": {
+   "n": 2000,
+   "shares": {
+    "neutral": 8.55,
+    "fear": 0.0,
+    "anger": 5.35,
+    "happiness": 11.85,
+    "sadness": 22.7,
+    "disgust": 11.7,
+    "surprise": 4.05,
+    "confidence": 18.55,
+    "confusion": 8.3,
+    "contempt": 8.95,
+    "empathy": 0.0
+   },
+   "accuracy": 20.8,
+   "accuracy_ci": [
+    17.3,
+    24.5
+   ],
+   "macro_f1": 15.93,
+   "macro_f1_ci": [
+    13.93,
+    17.5
+   ],
+   "unparsed": 0.0
+  },
+  "llama-4-maverick": {
+   "n": 2000,
+   "shares": {
+    "neutral": 0.65,
+    "fear": 0.05,
+    "anger": 9.3,
+    "happiness": 9.85,
+    "sadness": 8.2,
+    "disgust": 34.6,
+    "surprise": 8.6,
+    "confidence": 11.3,
+    "confusion": 5.05,
+    "contempt": 12.3,
+    "empathy": 0.1
+   },
+   "accuracy": 18.15,
+   "accuracy_ci": [
+    15.4,
+    20.75
+   ],
+   "macro_f1": 13.6,
+   "macro_f1_ci": [
+    11.01,
+    15.37
+   ],
+   "unparsed": 0.0
+  }
+ },
+ "models_fleiss_kappa": 0.43,
+ "models_fleiss_n_clips": 1993
+}

@@ -1,0 +1,7 @@
+# Test of the whole pipeline without network: the model `mock` answers at random.
+task: recognition
+corpus: eve
+group: mock
+template: recognition
+conditions: [speaker, speaker_repeat, woman, man, woman+old]
+models: [mock]

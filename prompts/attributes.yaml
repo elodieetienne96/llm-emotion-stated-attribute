@@ -1,0 +1,44 @@
+# The stated attributes (Table 1 of the paper).
+#
+# In the control condition the transcript begins with "The speaker said". In an attribute
+# condition, "The speaker" is replaced by the attribute phrase: "The woman said",
+# "The old person said", "The person of Western European descent said".
+# In a combination, a gender attribute and one attribute of another group are stated
+# together: "The old woman said", "The neurotic transgender person said",
+# "The man of East Asian descent said".
+#
+# Each attribute gives either a noun (gender group) or a modifier placed before or after
+# the noun. Without a gender attribute the noun is "person".
+# The generation task states the same attribute in one sentence before the actors' brief:
+# "You are a woman.", "You are an old woman.", "You are a person of East Asian descent."
+
+groups:
+  gender:
+    woman:        {noun: woman}
+    man:          {noun: man}
+    non_binary:   {noun: non-binary person}
+    transgender:  {noun: transgender person}
+    other_gender: {noun: person, after: of another gender}
+    trans_woman:  {noun: trans woman}
+    trans_man:    {noun: trans man}
+  age:
+    young:        {before: young}
+    middle_aged:  {before: middle-aged}
+    old:          {before: old}
+  descent:
+    western_european:             {after: of Western European descent}
+    eastern_european:             {after: of Eastern European descent}
+    north_african_middle_eastern: {after: of North African or Middle Eastern descent}
+    sub_saharan_african:          {after: of Sub-Saharan African descent}
+    south_asian:                  {after: of South Asian descent}
+    east_asian:                   {after: of East Asian descent}
+    latin_american:               {after: of Latin American descent}
+  personality:
+    extraverted:   {before: extraverted}
+    agreeable:     {before: agreeable}
+    conscientious: {before: conscientious}
+    neurotic:      {before: neurotic}
+    open:          {after: open to experience}
+
+# The five gender attributes combined with the fifteen attributes of the other groups (75 combinations).
+combined_genders: [woman, man, non_binary, transgender, other_gender]

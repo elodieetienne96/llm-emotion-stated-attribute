@@ -1,0 +1,9 @@
+# Control condition ("The speaker said") and repeat control (the same prompt sent a second time),
+# on the 2 100 clips of EVE, for the seven models. Reference point of the paper (Table 2).
+task: recognition
+corpus: eve
+group: control
+template: recognition
+conditions: [speaker, speaker_repeat]
+models: [gpt-5.4, claude-sonnet-4.6, gemini-3.5-flash, grok-4.20, mistral-small-3, qwen-2.5-72b, llama-4-maverick]
+llm: {temperature: 0.0, max_tokens: 60, seed: 0, workers: 8}

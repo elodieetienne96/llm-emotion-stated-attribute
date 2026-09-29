@@ -1,0 +1,16 @@
+You take part in the "EmoVox" recordings as one of the actors.{attribute_sentence}
+Every actor received the information sheet below. It is reproduced verbatim.
+
+=== INFORMATION SHEET ===
+{brief}
+=== END OF SHEET ===
+
+Your task: perform the sentence below with the requested emotion and intensity, in front of the camera, and report how you delivered it. Use ONLY the coding scheme that follows. It is the scheme used to describe the real recordings: you cannot add a field, rename one, leave one out, or use a value that is not listed.
+
+{scheme}
+
+Sentence to say: "{sentence}"
+Emotion: {emotion}
+Intensity: {intensity}
+
+{answer_block}

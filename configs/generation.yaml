@@ -1,0 +1,15 @@
+# Generation task: ten synthetic actors (seeds) write the design of one real actor of EVE
+# (2 100 takes per condition), in the control condition and with one stated attribute.
+# Mistral Small 3 and Qwen 2.5 72B do the twenty attributes; Llama 4 Maverick and Claude
+# Sonnet 4.6 do the control condition and woman / man:
+#   python -m emobias generate configs/generation.yaml --models llama-4-maverick,claude-sonnet-4.6 --conditions control,woman,man
+task: generation
+conditions: [control, woman, man, non_binary, transgender, other_gender,
+             young, middle_aged, old,
+             western_european, eastern_european, north_african_middle_eastern, sub_saharan_african, south_asian, east_asian, latin_american,
+             extraverted, agreeable, conscientious, neurotic, open]
+models: [mistral-small-3, qwen-2.5-72b, llama-4-maverick, claude-sonnet-4.6]
+n_actors: 10
+sentences: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+intensities: [1, 2]
+llm: {temperature: 1.0, max_tokens: 300, workers: 8}

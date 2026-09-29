@@ -1,0 +1,77 @@
+Emotions and intensities
+This is an example. Feel free to choose the situation to best portray the requested emotion.
+
+1. Hapiness: A positive emotional state characterized by joy and satisfaction.
+   a. Low Intensity: It's like feeling a gentle warmth in the chest.
+   b. High Intensity: It's like experiencing an uncontrollable urge to jump for joy.
+   Examples:
+   - Receiving a gift from friends and family that you've been wanting.
+   - Getting a long-awaited promotion at work.
+   - Winning an award or competition you worked hard to achieve.
+
+2. Sadness: A negative emotional state marked by melancholy and emotional pain.
+   a. Low Intensity: It's like having a lump in your throat.
+   b. High Intensity: It's like feeling on the verge of an emotional breakdown.
+   Examples:
+   - Losing a loved one or a pet.
+   - Receiving distressing news about a loved one's health.
+   - Going through a painful breakup with a partner.
+
+3. Fear: An emotion in response to a perceived threat or dangerous situation, causing anxiety.
+   a. Low Intensity: It's like having a knot in your stomach.
+   b. High Intensity: It's like feeling paralyzed.
+   Examples:
+   - Being alone in a dark forest and hearing strange noises.
+   - Encountering a wild animal while hiking.
+
+4. Disgust: An emotion of revulsion toward something unpleasant.
+   a. Low Intensity: It's like sensing something unpleasant but tolerable.
+   b. High Intensity: It's like feeling physical repulsion.
+   Examples:
+   - Discovering mold in food you were about to eat.
+   - Walking through a dirty and foul-smelling street.
+   - Meeting a person who doesn't take care of themselves and emits a strong body odor.
+
+5. Anger: A negative emotional state characterized by irritation and frustration.
+   a. Low Intensity: It's like feeling your blood pressure rise.
+   b. High Intensity: It's like experiencing boiling, uncontrollable anger.
+   Examples:
+   - Getting stuck in traffic when you're running late for an important meeting.
+   - Arguing with a close friend due to a misunderstanding.
+   - Facing offensive comments or insults.
+
+6. Surprise: A momentary emotion caused by something unexpected.
+   a. Low Intensity: It's like momentarily being taken aback by unexpected news.
+   b. High Intensity: It's like feeling completely stunned by a sudden and astonishing revelation.
+   Examples:
+   - Receiving an unexpected marriage proposal.
+   - Winning the lottery.
+   - Discovering a gift you didn't expect to receive.
+
+7. Self-Confidence: A feeling of assurance and belief in one's own abilities and skills.
+   a. Low Intensity: It's like quietly feeling confident in your abilities.
+   b. High Intensity: It's like radiating an aura of absolute confidence.
+   Examples:
+   - Delivering a speech in front of a large audience with confidence.
+
+8. Confusion: A mental state marked by a lack of clarity or understanding.
+   a. Low Intensity: It's like trying to grasp a complex concept.
+   b. High Intensity: It's like being completely lost and disoriented.
+   Examples:
+   - Receiving contradictory instructions at work.
+   - Getting lost in a foreign city without a map or GPS.
+   - Trying to understand a complex math problem without initial success.
+
+9. Contempt: An emotion of disdain or superiority towards something or someone.
+   a. Low Intensity: It's like disagreement or disapproval, but not eliciting a strong reaction.
+   b. High Intensity: It's like completely ignoring someone's suggestions, openly ridiculing them, or expressing contempt by treating them condescendingly.
+   Examples:
+   - Displaying an arrogant and condescending attitude toward others.
+   - Speaking disdainfully about your interests or values.
+
+10. Sympathy: A positive emotion marked by understanding and affection for another person's emotions or situation.
+   a. Low Intensity: It's like feeling a mild concern, some empathy, but not being deeply affected.
+   b. High Intensity: It's like feeling genuine concern for the other person, sharing their emotions, and being deeply affected.
+   Examples:
+   - Supporting a friend going through a tough time.
+   - Feeling compassion for someone sharing an emotional story.
