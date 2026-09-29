@@ -472,6 +472,11 @@ def run(log=print) -> None:
     write_site("generation_takes", site_generation_takes())
     write_site("prompts", site_prompts(clips))
     write_site("code", site_code())
+    # stamp the site so that a CDN does not serve stale copies of app.js and the data scripts
+    import re as _re, time as _time
+    stamp = _time.strftime("%Y%m%d-%H%M")
+    html = (ROOT / "docs" / "index.html")
+    html.write_text(_re.sub(r'(SITE_VERSION=")[^"]*(")', rf'\g<1>{stamp}\g<2>', _re.sub(r'app\.js\?v=[^"]*', f"app.js?v={stamp}", html.read_text(encoding="utf-8"))), encoding="utf-8")
     write_markdown(measures)
     log(f"written {MEASURES} and {SITE}")
 

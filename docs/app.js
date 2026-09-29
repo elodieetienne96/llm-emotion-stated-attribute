@@ -23,9 +23,9 @@ async function load(name) {
   D[name] = await new Promise((resolve, reject) => {
     if (window.__DATA && window.__DATA[name]) return resolve(window.__DATA[name]);
     const s = document.createElement("script");
-    s.src = `data/${name}.js`;
+    s.src = `data/${name}.js?v=${window.SITE_VERSION || "0"}`;   // the version defeats stale CDN copies
     s.onload = () => (window.__DATA && window.__DATA[name]) ? resolve(window.__DATA[name]) : reject(new Error(`data/${name}.js did not define the data`));
-    s.onerror = () => fetch(`data/${name}.json`).then((r) => r.json()).then(resolve).catch(reject);
+    s.onerror = () => fetch(`data/${name}.json?v=${window.SITE_VERSION || "0"}`).then((r) => r.json()).then(resolve).catch(reject);
     document.head.appendChild(s);
   });
   return D[name];
