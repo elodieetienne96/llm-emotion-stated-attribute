@@ -31,7 +31,9 @@ async function main() {
   });
   [D.M, D.C, D.PR, D.P] = await Promise.all([load("measures"), load("clips"), load("predictions"), load("prompts")]);
   D.EMO = D.M.meta.emotions;
-  D.models = Object.keys(D.M.reference.models);
+  // models that ran every condition first, then partial designs, then the control-only models
+  D.models = Object.keys(D.M.reference.models)
+    .sort((x, y) => Object.keys((D.PR.models || {})[y] || {}).length - Object.keys((D.PR.models || {})[x] || {}).length);
   // models that ran every condition first; a model with a partial design (fewer conditions) comes last
   D.attrModels = Object.keys(D.M.effects).filter((m) => Object.keys(D.M.effects[m]).length > 0)
     .sort((x, y) => Object.keys(D.M.effects[y]).length - Object.keys(D.M.effects[x]).length);
